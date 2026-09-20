@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<title>Chillera App — Just Chilling</title>
+<meta name="description" content="Chillera App — mapa, ceny, kalkulator, wydarzenia, Pass i Mati.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Patrick+Hand&display=swap');
+:root{--black:#111;--paper:#f5f3ed;--lime:#a8c55b;--soft:#e6dcc1;--gray:#666;--line:#ddd6c8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--black);font-family:Montserrat,Arial,sans-serif}.wrap{max-width:1180px;margin:auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:20;background:#111;color:#fff;border-bottom:1px solid #ffffff14}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:'Patrick Hand';font-size:32px}.brand b{color:var(--lime)}.navlinks{display:flex;gap:8px}.navlinks a{color:#fff;text-decoration:none;font-size:10px;font-weight:900;padding:9px 11px;border-radius:99px}.navlinks a:hover,.navlinks a.active{background:var(--lime);color:#111}
+.hero{padding:45px 0 25px}.eyebrow{font-size:10px;letter-spacing:.16em;font-weight:900;color:#71853a}.hero h1{font-family:'Patrick Hand';font-size:clamp(60px,9vw,110px);line-height:.76;margin:15px 0}.hero h1 span{color:var(--lime)}.hero p{max-width:680px;color:#666;line-height:1.6;font-size:13px}.quick{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:28px 0}.quick a{background:#111;color:#fff;text-decoration:none;border-radius:18px;padding:17px;font-size:11px;font-weight:900}.quick a span{display:block;font-size:23px;margin-bottom:12px}.quick a:hover{background:var(--lime);color:#111}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 12px 30px #00000008}.dark{background:#111;color:#fff;border-color:#111}.card h2{font-size:25px;margin:7px 0 10px}.script{font-family:'Patrick Hand';font-size:50px;line-height:.85}.script span{color:var(--lime)}.muted{color:#777;font-size:11px;line-height:1.55}
+.calc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.field label{display:block;font-size:9px;font-weight:900;letter-spacing:.08em;margin-bottom:6px}.field input{width:100%;border:1px solid #d4cec2;border-radius:13px;padding:13px;background:#fff;font:800 18px Montserrat;outline:none}.field input:focus{border-color:#111}.result{margin-top:15px;background:#f0eadc;border-radius:18px;padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.result b{display:block;font-size:22px}.result span{font-size:9px;color:#777}.switch{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:10px;font-weight:800}.switch input{accent-color:#111}
+.chat{display:flex;flex-direction:column;min-height:410px}.messages{flex:1;display:flex;flex-direction:column;gap:9px;overflow:auto;padding:10px 0}.bubble{max-width:82%;padding:11px 13px;border-radius:15px;font-size:11px;line-height:1.45}.bot{background:#eee9df}.me{background:#111;color:#fff;align-self:flex-end}.chatrow{display:flex;gap:7px;margin-top:12px}.chatrow input{flex:1;border:1px solid #d4cec2;border-radius:99px;padding:12px 14px;font:11px Montserrat}.send{border:0;border-radius:99px;background:var(--lime);font-weight:900;padding:0 17px;cursor:pointer}.suggest{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.suggest button{border:1px solid #d4cec2;background:#fff;border-radius:99px;padding:7px 9px;font-size:9px;font-weight:900;cursor:pointer}
+.pass{background:#111;color:#fff;border-radius:24px;padding:26px;min-height:235px;position:relative;overflow:hidden}.pass:after{content:'00123';position:absolute;right:-5px;bottom:-38px;font-size:110px;font-weight:900;color:#ffffff08}.pass h2{font-family:'Patrick Hand';font-size:48px;margin:20px 0 8px}.pass h2 span{color:var(--lime)}.qr{width:82px;height:82px;background:repeating-linear-gradient(45deg,#fff 0 4px,#111 4px 8px);margin-top:18px}
+.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.action{border:1px solid var(--line);background:#fff;border-radius:18px;padding:17px;text-decoration:none;color:#111}.action b{font-size:12px}.action span{display:block;color:#777;font-size:10px;margin-top:6px;line-height:1.4}
+.note{font-size:9px;color:#777;line-height:1.5;margin-top:12px}.footer{margin-top:35px;background:#111;color:#fff;padding:24px 20px;font-size:10px}.footer b{color:var(--lime)}
+@media(max-width:760px){.navlinks a:nth-child(n+3){display:none}.hero{padding-top:32px}.quick{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.calc{grid-template-columns:1fr}.result{grid-template-columns:1fr 1fr}.script{font-size:43px}.wrap{padding:0 15px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><nav class="nav"><a class="brand" href="index.html" style="color:#fff;text-decoration:none">JUST <b>CHILLING</b></a><div class="navlinks"><a class="active" href="app.html">APKA</a><a href="index.html#mapa">MAPA</a><a href="index.html#gdziepolek">CENY</a><a href="index.html#eventy">EVENTY</a><a href="index.html#pass">PASS</a></div></nav></div></header>
+
+<main class="wrap">
+<section class="hero">
+<div class="eyebrow">CHILLERA APP / KATOWICE</div>
+<h1>WSZYSTKO W<br><span>JEDNYM MIEJSCU.</span></h1>
+<p>Mapa miejsc, kalkulator cen, wydarzenia, Chillera Pass i Mati — jeden prosty panel zamiast pięciu różnych stron.</p>
+<div class="quick">
+<a href="#kalkulator"><span>🧮</span>KALKULATOR</a>
+<a href="index.html#gdziepolek"><span>💸</span>CENY</a>
+<a href="index.html#mapa"><span>🗺️</span>MAPA</a>
+<a href="#mati"><span>🤖</span>MATI</a>
+<a href="#pass"><span>🪪</span>PASS</a>
+</div>
+</section>
+
+<section class="grid">
+<div class="card" id="kalkulator">
+<div class="eyebrow">CHILLERA CALC</div>
+<h2>Przelicz opakowanie</h2>
+<p class="muted">Wpisz cenę i gramaturę opakowania. Kalkulator pokazuje cenę za 1 g oraz koszt wybranej ilości. To zwykłe przeliczenie matematyczne — nie rekomendacja produktu.</p>
+<div class="calc">
+<div class="field"><label>CENA OPAKOWANIA / ZŁ</label><input id="price" type="number" min="0" step=".01" value="250"></div>
+<div class="field"><label>GRAMATURA / G</label><input id="grams" type="number" min=".01" step=".01" value="15"></div>
+<div class="field"><label>ILE CHCESZ PRZELICZYĆ / G</label><input id="want" type="number" min=".01" step=".01" value="5"></div>
+</div>
+<label class="switch"><input id="fee" type="checkbox" checked> dolicz 13 zł za każde rozpoczęte 5 g</label>
+<div class="result"><div><span>CENA ZA 1 G</span><b id="perg">—</b></div><div><span>KOSZT WYBRANEJ ILOŚCI</span><b id="wanted">—</b></div></div>
+<p class="note">Opłata 13 zł jest opcjonalnym parametrem kalkulatora zgodnym z wcześniejszą wersją modułu. Nie jest ogólną opłatą rynkową.</p>
+</div>
+
+<div class="card dark" id="pass">
+<div class="eyebrow">JUST CHILLING / PASS</div>
+<div class="pass"><div style="font-size:9px;letter-spacing:.15em;color:#aaa">CHILLERA MEMBERSHIP</div><h2>CHILLERA <span>PASS</span></h2><div style="font-size:10px;color:#aaa">MAPA • EVENTY • PARTNERZY • QUESTY</div><div class="qr"></div></div>
+<p class="muted" style="color:#aaa;margin-bottom:0">Na tym panelu docelowo będzie Twój profil, QR i aktywne benefity partnerów.</p>
+</div>
+</section>
+
+<section class="grid" style="margin-top:18px" id="mati">
+<div class="card chat">
+<div><div class="eyebrow">MATI / CHILLERA BOT</div><h2 class="script">MATI <span>OGARNIA.</span></h2><p class="muted">Prosty asystent Chillery. Na start odpowiada na pytania o aplikację, mapę, eventy, Pass i kalkulator.</p></div>
+<div class="messages" id="messages"><div class="bubble bot">Siema 👋 Jestem Mati. Mogę ogarnąć mapę, wydarzenia, Pass albo kalkulator. Co wybierasz?</div></div>
+<div class="suggest"><button onclick="ask('Pokaż mapę')">MAPA</button><button onclick="ask('Co się dzieje?')">EVENTY</button><button onclick="ask('Jak działa kalkulator?')">KALKULATOR</button><button onclick="ask('Co daje Pass?')">PASS</button></div>
+<div class="chatrow"><input id="chatInput" placeholder="Napisz do Matiego..."><button class="send" onclick="send()">→</button></div>
+</div>
+
+<div class="card">
+<div class="eyebrow">CHILLERA / SZYBKIE WEJŚCIA</div>
+<h2>Co dalej?</h2>
+<div class="actions">
+<a class="action" href="index.html#mapa"><b>🗺️ MAPA KATOWIC</b><span>Sklepy, miejsca, punkty medyczne i apteki — informacyjnie.</span></a>
+<a class="action" href="index.html#gdziepolek"><b>💸 CENY</b><span>Istniejący moduł MN8 + przeliczenie budżetu na jednostki 5 g.</span></a>
+<a class="action" href="index.html#eventy"><b>🎟️ EVENTY</b><span>Chillera Weekend, koncerty, Hipnoza i radar miasta.</span></a>
+<a class="action" href="index.html#blog"><b>✍️ BLOG</b><span>Miejsca, muzyka, ekipa i lokalne historie.</span></a>
+</div>
+</div>
+</section>
+
+<section class="card" style="margin-top:18px">
+<div class="eyebrow">CHILLERA 2.0</div><h2 class="script">NIE TYLKO STRONA.<br><span>APKA.</span></h2>
+<p class="muted">Kolejne moduły możemy podpinać bez rozwalania tego, co już działa: prawdziwe dane mapy, konta użytkowników, Pass, baza partnerów i bot Instagram/Mati.</p>
+<div class="note">Informacje o lekach i terapii mają charakter informacyjny. Decyzje dotyczące leczenia podejmuje lekarz, a dostępność produktu należy potwierdzić w aptece.</div>
+</section>
+</main>
+
+<footer class="footer"><div class="wrap">© 2026 JUST <b>CHILLING</b> / CHILLERA • <a href="index.html" style="color:#fff">WRÓĆ NA STRONĘ →</a></div></footer>
+
+<script>
+function calc(){
+ const p=Math.max(0,Number(document.getElementById('price').value)||0);
+ const g=Math.max(.01,Number(document.getElementById('grams').value)||.01);
+ const w=Math.max(0,Number(document.getElementById('want').value)||0);
+ const feeOn=document.getElementById('fee').checked;
+ const per=p/g;
+ const extra=feeOn ? Math.ceil(w/5)*13 : 0;
+ document.getElementById('perg').textContent=per.toFixed(2)+' zł';
+ document.getElementById('wanted').textContent=(per*w+extra).toFixed(2)+' zł';
+ localStorage.setItem('chilleraCalc',JSON.stringify({p,g,w,feeOn}));
+}
+function loadCalc(){
+ try{const x=JSON.parse(localStorage.getItem('chilleraCalc')||'null');if(x){price.value=x.p;grams.value=x.g;want.value=x.w;fee.checked=x.feeOn}}catch(e){}
+ calc();
+}
+['price','grams','want','fee'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+document.getElementById('fee').addEventListener('change',calc);
+loadCalc();
+
+function botReply(q){
+ const s=q.toLowerCase();
+ if(s.includes('map')) return 'Jasne. Kliknij MAPA — otworzy się mapa Katowic z punktami Chillery.';
+ if(s.includes('event')||s.includes('dzieje')||s.includes('hipno')) return 'Radar eventów jest na stronie głównej. Mamy osobno Chillera Weekend, koncerty i miejskie wydarzenia.';
+ if(s.includes('kalk')||s.includes('cen')) return 'Kalkulator jest tutaj wyżej. Podajesz cenę opakowania, gramaturę i ilość. Liczę zł/g oraz koszt wybranej ilości.';
+ if(s.includes('pass')||s.includes('karta')) return 'Chillera Pass ma zbierać mapę, aktywne benefity partnerów, eventy i questy. Profil użytkownika podepniemy w kolejnym etapie.';
+ if(s.includes('lekar')||s.includes('recept')) return 'Mogę pokazać informacyjne miejsca medyczne z mapy, ale nie diagnozuję, nie wystawiam recept i nie zastępuję lekarza.';
+ return 'Mogę ogarnąć: MAPA, EVENTY, KALKULATOR albo PASS. Napisz jedno z tych haseł.';
+}
+function ask(q){
+ const box=document.getElementById('messages');
+ box.insertAdjacentHTML('beforeend','<div class="bubble me">'+q.replace(/[<>]/g,'')+'</div><div class="bubble bot">'+botReply(q)+'</div>');
+ box.scrollTop=box.scrollHeight;
+}
+function send(){const i=document.getElementById('chatInput');const q=i.value.trim();if(!q)return;ask(q);i.value='';}
+document.getElementById('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+</script>
+</body></html>
