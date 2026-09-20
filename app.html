@@ -19,8 +19,10 @@
 .actions{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.action{border:1px solid var(--line);background:#fff;border-radius:18px;padding:17px;text-decoration:none;color:#111}.action b{font-size:12px}.action span{display:block;color:#777;font-size:10px;margin-top:6px;line-height:1.4}
 .note{font-size:9px;color:#777;line-height:1.5;margin-top:12px}.footer{margin-top:35px;background:#111;color:#fff;padding:24px 20px;font-size:10px}.footer b{color:var(--lime)}
 @media(max-width:760px){.navlinks a:nth-child(n+3){display:none}.hero{padding-top:32px}.quick{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.calc{grid-template-columns:1fr}.result{grid-template-columns:1fr 1fr}.script{font-size:43px}.wrap{padding:0 15px}}
+
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}.video-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}.video-card>h3,.video-card>p,.video-card>.eyebrow,.tags{margin-left:17px;margin-right:17px}.video-card h3{font-size:17px;margin-top:7px;margin-bottom:7px}.video-card p{font-size:10px;line-height:1.55;color:#777;min-height:48px}.video-placeholder{height:145px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;position:relative}.video-placeholder span{width:52px;height:52px;border-radius:50%;background:var(--lime);color:#111;display:grid;place-items:center;font-size:20px;padding-left:3px}.video-placeholder small{position:absolute;left:12px;bottom:10px;font-size:8px;font-weight:900;letter-spacing:.12em}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:17px}.tags b{font-size:7px;border:1px solid var(--line);border-radius:99px;padding:5px 7px}.ytbar{margin-top:16px;border-radius:17px;background:#111;color:#fff;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:15px}.ytbar span{display:block;color:#aaa;font-size:9px;margin-top:4px}.ytbar a{color:#111;background:var(--lime);border-radius:99px;padding:10px 13px;text-decoration:none;font-size:9px;font-weight:900;white-space:nowrap}@media(max-width:760px){.video-grid{grid-template-columns:1fr}.ytbar{align-items:flex-start;flex-direction:column}.ytbar a{white-space:normal}}
 </style>
-<!-- Chillera App live build trigger 2026-09-20 --></head>
+<!-- Chillera App blog build 2026-09-20 --></head>
 <body>
 <header class="top"><div class="wrap"><nav class="nav"><a class="brand" href="index.html" style="color:#fff;text-decoration:none">JUST <b>CHILLING</b></a><div class="navlinks"><a class="active" href="app.html">APKA</a><a href="index.html#mapa">MAPA</a><a href="index.html#gdziepolek">CENY</a><a href="index.html#eventy">EVENTY</a><a href="index.html#pass">PASS</a></div></nav></div></header>
 
@@ -78,6 +80,33 @@
 <a class="action" href="index.html#blog"><b>✍️ BLOG</b><span>Miejsca, muzyka, ekipa i lokalne historie.</span></a>
 </div>
 </div>
+</section>
+
+<section class="card" id="blog" style="margin-top:18px">
+<div class="eyebrow">CHILLERA BLOG / YOUTUBE</div>
+<h2 class="script">OGLĄDAMY.<br><span>SPRAWDZAMY.</span></h2>
+<p class="muted">Tu będą nasze filmy, recenzje i historie z Katowic. Jeden materiał = film na YouTube + krótka recenzja + karta miejsca w Chillerze.</p>
+<div class="video-grid">
+<article class="video-card">
+<div class="video-placeholder"><span>▶</span><small>NOWY FILM</small></div>
+<div class="eyebrow">RECENZJA #001</div><h3>Pierwszy materiał Chillery</h3>
+<p>Test miejsca, rozmowa z ekipą, klimat, muzyka i rzeczy, które naprawdę warto wiedzieć.</p>
+<div class="tags"><b>KATOWICE</b><b>RECENZJA</b><b>YOUTUBE</b></div>
+</article>
+<article class="video-card">
+<div class="video-placeholder"><span>▶</span><small>COMING SOON</small></div>
+<div class="eyebrow">CHILLERA TEST</div><h3>Miejsce / produkt / wydarzenie</h3>
+<p>Krótki format: co sprawdziliśmy, co nam się podobało i dla kogo jest dane miejsce.</p>
+<div class="tags"><b>TEST</b><b>VIDEO</b><b>LOCAL</b></div>
+</article>
+<article class="video-card">
+<div class="video-placeholder"><span>▶</span><small>COMING SOON</small></div>
+<div class="eyebrow">CHILLERA CITY</div><h3>Katowice po swojemu</h3>
+<p>Lokale, muzyka, eventy i ludzie. Bez nadęcia — normalna ekipa i normalne historie.</p>
+<div class="tags"><b>KATO</b><b>MUZYKA</b><b>EKIPA</b></div>
+</article>
+</div>
+<div class="ytbar"><div><b>CHILLERA NA YOUTUBE</b><span>Filmy będziemy podpinać tutaj po publikacji.</span></div><a href="#" onclick="return false">▶ KANAŁ WKRÓTCE</a></div>
 </section>
 
 <section class="card" style="margin-top:18px">
