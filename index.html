@@ -1,244 +1,119 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#111111">
-<title>JUST CHILLING — Chillera</title>
-<meta name="description" content="Chillera — lokalna karta, mapa miejsc, wydarzenia, muzyka i Chillcamp. Katowice i Śląsk.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d0d0d">
+<title>CHILLERA — Katowice / music / culture / chill</title>
+<meta name="description" content="Chillera — lokalny przewodnik po miejscach, muzyce, wydarzeniach i legalnych produktach konopnych. Katowice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Patrick+Hand&display=swap');
-:root{--black:#111;--paper:#f5f3ed;--lime:#a8c55b;--soft:#e6dcc1;--gray:#555;--line:#d9d3c7}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--black);font-family:Montserrat,Arial,sans-serif}.wrap{max-width:1180px;margin:auto}.top{background:#111;color:#f5f3ed;padding:0 28px}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.brand{font-family:'Patrick Hand',cursive;font-size:34px;line-height:.8;color:white}.brand b{color:var(--lime)}.links{display:flex;gap:20px;font-size:11px;font-weight:700}.links a{text-decoration:none;color:inherit}.join{background:var(--lime);border:0;border-radius:30px;padding:12px 18px;font-weight:900;cursor:pointer}.hero{background:#111;color:#f5f3ed;padding:45px 8% 60px;text-align:center}.hero h1{font-family:'Patrick Hand',cursive;font-size:clamp(80px,12vw,150px);line-height:.72;margin:10px 0;color:#fff}.hero h1 span{color:var(--lime);display:block}.crown{color:var(--lime);font-size:42px}.claim{font-size:12px;letter-spacing:.38em;margin:28px 0 32px}.hero p{max-width:680px;margin:auto;color:#ddd;font-size:15px;line-height:1.65}.icons{display:grid;grid-template-columns:repeat(6,1fr);gap:15px;max-width:760px;margin:42px auto 0}.ico{font-size:25px}.ico small{display:block;font-size:9px;margin-top:8px;letter-spacing:.08em}.iconbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:72px;padding:9px 7px;border:1px solid #ffffff22;border-radius:16px;background:#ffffff08;color:#fff;text-decoration:none;transition:.2s;cursor:pointer}.iconbtn:hover{background:var(--lime);color:#111;transform:translateY(-3px)}.iconbtn small{font-size:9px;margin-top:8px;letter-spacing:.08em;font-weight:900}.band{background:var(--lime);padding:13px;text-align:center;font-weight:900;font-size:12px;letter-spacing:.05em}.section{padding:58px 7%;border-bottom:1px solid var(--line)}.section h2{font-size:31px;margin:0 0 8px;letter-spacing:-.03em}.lead{color:#666;font-size:14px;margin:0 0 28px}.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#111;color:#fff;border-radius:18px;padding:24px;min-height:170px}.card.lite{background:#fff;border:1px solid #ddd6c8;color:#111}.card .num{font-size:11px;color:var(--lime);font-weight:900;letter-spacing:.08em}.card h3{margin:13px 0 8px;font-size:19px}.card p{margin:0;color:#aaa;line-height:1.5;font-size:13px}.lite p{color:#666}.passgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.pass{background:#111;color:#fff;border-radius:24px;padding:28px;min-height:270px;box-shadow:0 18px 45px #0002}.pass .label{font-size:11px;letter-spacing:.16em;color:#bbb}.pass .title{font-family:'Patrick Hand',cursive;font-size:44px;margin-top:25px}.pass .title span{color:var(--lime)}.qr{width:100px;height:100px;background:repeating-linear-gradient(45deg,#fff 0 4px,#111 4px 8px);margin-top:28px}.benefit{font-size:15px;line-height:1.9}.benefit b{color:#111}.map{height:360px;border-radius:24px;background:#ddd5c3;position:relative;overflow:hidden;border:1px solid #c8c0b1}.map:before{content:'KATOWICE';position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(45px,9vw,115px);font-weight:900;color:#1111110c}.pin{position:absolute;background:#111;color:#fff;border:3px solid var(--lime);padding:9px 12px;border-radius:50px;font-size:11px;font-weight:900;z-index:2}.p1{left:14%;top:25%}.p2{right:15%;top:42%}.p3{left:42%;bottom:18%}.maplegend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.chip{border:1px solid #c9c2b4;border-radius:99px;padding:9px 12px;font-size:11px;font-weight:800;background:#fff}.event{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}.feature{background:#111;color:#fff;border-radius:24px;padding:32px;min-height:330px;position:relative;overflow:hidden}.feature:after{content:'01';position:absolute;right:-15px;bottom:-55px;font-size:190px;font-weight:900;color:#ffffff08}.feature .date{color:var(--lime);font-weight:900;font-size:12px;letter-spacing:.12em}.feature h3{font-family:'Patrick Hand',cursive;font-size:58px;line-height:.85;margin:22px 0}.feature p{color:#bbb;max-width:570px;line-height:1.55}.smallcards{display:grid;gap:18px}.smallcard{border:1px solid #d1cabd;border-radius:20px;padding:24px;background:#fff}.smallcard strong{font-size:17px}.smallcard span{display:block;color:#777;font-size:12px;margin-top:8px}.bloggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.post{background:#fff;border:1px solid #ddd6c8;border-radius:18px;overflow:hidden}.post .pic{height:135px;background:linear-gradient(135deg,#111 0 55%,var(--lime) 55%)}.post .body{padding:19px}.post .meta{font-size:10px;color:#888;font-weight:800}.post h3{font-size:18px;margin:9px 0}.post p{font-size:12px;color:#666;line-height:1.5}.shopgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.shop{background:#111;color:#fff;border-radius:18px;padding:20px}.shop b{font-size:17px}.shop small{display:block;color:#aaa;margin-top:7px}.shop button{margin-top:18px;background:var(--lime);border:0;border-radius:99px;padding:9px 13px;font-size:11px;font-weight:900}.cta{background:var(--lime);border-radius:25px;padding:36px;display:flex;justify-content:space-between;align-items:center;gap:20px}.cta h2{font-family:'Patrick Hand',cursive;font-size:54px;line-height:.8}.dark{background:#111;color:#fff;border:0;border-radius:99px;padding:14px 20px;font-weight:900}.footer{background:#111;color:#f5f3ed;padding:25px 7%;display:flex;justify-content:space-between;font-size:11px}.footer b{color:var(--lime)}
-@media(max-width:760px){.links{display:none}.hero{padding:45px 22px 55px}.icons{grid-template-columns:repeat(3,1fr)}.cols,.passgrid,.event,.bloggrid,.shopgrid{grid-template-columns:1fr}.section{padding:48px 22px}.feature h3{font-size:50px}.cta{display:block}.dark{margin-top:20px}.footer{display:block}.footer span{display:block;margin:5px 0}}
-.maptools{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filter{border:1px solid #c9c2b4;background:#fff;border-radius:99px;padding:10px 14px;font-size:10px;font-weight:900;cursor:pointer}.filter.active{background:#111;color:#fff;border-color:#111}.realmap{height:460px;border-radius:26px;background:#d8d0bf;position:relative;overflow:hidden;border:1px solid #c8c0b1;box-shadow:inset 0 0 80px #00000009}.mapgrid{position:absolute;inset:0;background-image:linear-gradient(#11111108 1px,transparent 1px),linear-gradient(90deg,#11111108 1px,transparent 1px);background-size:34px 34px;transform:rotate(-7deg) scale(1.08)}.district{position:absolute;font-size:10px;font-weight:900;color:#1113;letter-spacing:.14em}.d1{left:42%;top:45%}.d2{left:50%;top:18%}.d3{left:16%;top:57%}.d4{right:10%;top:25%}.maproad{position:absolute;height:7px;background:#f5f3ed99;border-radius:10px;box-shadow:0 0 0 2px #aaa5}.r1{width:85%;left:5%;top:48%;transform:rotate(-10deg)}.r2{width:70%;left:15%;top:35%;transform:rotate(34deg)}.r3{width:60%;left:24%;top:64%;transform:rotate(-36deg)}.map-pin{position:absolute;z-index:3;display:flex;align-items:center;gap:6px;transform:translate(-50%,-50%);cursor:pointer}.map-pin b{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;border:3px solid var(--lime);box-shadow:0 7px 18px #0003}.map-pin span{background:#fff;border-radius:9px;padding:7px 9px;font-size:10px;font-weight:900;box-shadow:0 5px 15px #0002;white-space:nowrap}.placegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.place{background:#fff;border:1px solid #ddd6c8;border-radius:18px;padding:18px}.place .tag{font-size:9px;font-weight:900;color:#697d31;letter-spacing:.08em}.place h3{margin:8px 0 5px;font-size:17px}.place p{margin:0 0 14px;color:#666;font-size:11px;line-height:1.45}.place a,.place button{font-size:10px;font-weight:900;color:#111;text-decoration:none;border:0;background:none;padding:0;cursor:pointer}.addplace{background:#111;color:#fff;border-color:#111}.addplace p{color:#aaa}.addplace .tag{color:var(--lime)}.addplace button{color:var(--lime)}.mapnote{margin-top:12px;color:#777;font-size:10px;line-height:1.5}@media(max-width:760px){.realmap{height:400px}.map-pin span{display:none}.placegrid{grid-template-columns:1fr}.map-pin b{width:34px;height:34px}.d1,.d2,.d3,.d4{font-size:8px}}.leaflet-wrap{height:560px;border-radius:26px;overflow:hidden;border:1px solid #c8c0b1;box-shadow:0 18px 45px #0002;background:#ddd}.leaflet-map{height:100%;width:100%}.leaflet-control-attribution{font-size:9px}.leaflet-popup-content-wrapper{border-radius:14px}.leaflet-popup-content{font-family:Montserrat,Arial,sans-serif;font-size:12px}.leaflet-tooltip.chillera-label{font-family:Montserrat,Arial,sans-serif;font-size:10px;font-weight:900;background:#fff;border:1px solid #ddd6c8;color:#111;border-radius:9px;padding:6px 8px;box-shadow:0 5px 15px #0002}.leaflet-tooltip.chillera-label:before{display:none}.leaflet-popup-content h3{margin:0 0 6px;font-size:16px}.leaflet-popup-content p{margin:0 0 10px;color:#666}.leaflet-btn{display:inline-block;background:#111;color:#fff!important;padding:8px 11px;border-radius:99px;text-decoration:none;font-size:10px;font-weight:900}.leaflet-pin{width:38px;height:38px;border-radius:50%;background:#111;border:3px solid var(--lime);display:grid;place-items:center;box-shadow:0 5px 15px #0004;font-size:17px}.map-status{font-size:10px;color:#777;margin-top:9px}@media(max-width:760px){.leaflet-wrap{height:480px}}</style>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3FZ0tLzJ2vJ6bFJQZx8sJQwQwQwQw=" crossorigin=""/>
-<style>.pricehero{display:grid;grid-template-columns:1.4fr .6fr;gap:28px;background:#111;color:#fff;border-radius:26px;padding:34px}.eyebrow{font-size:10px;letter-spacing:.16em;font-weight:900;color:#7f983f}.pricehero h2,.friendshead h2{font-family:'Patrick Hand',cursive;font-size:58px;line-height:.82;margin:18px 0}.pricehero h2 span,.friendshead h2 span{color:var(--lime)}.pricehero p{color:#bbb;line-height:1.55;font-size:13px;max-width:650px}.budgetbox{background:#fff;color:#111;border-radius:20px;padding:22px;align-self:stretch}.budgetlabel{font-size:10px;font-weight:900;letter-spacing:.1em;margin-bottom:10px}.budgetinput{display:flex;align-items:center;border-bottom:2px solid #111;padding:8px 0;margin-bottom:18px}.budgetinput input{border:0;outline:0;background:transparent;font-size:34px;font-weight:900;width:100%;font-family:Montserrat}.sourcecards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}.sourcecard{background:#fff;border:1px solid #ddd6c8;border-radius:18px;padding:20px}.sourcecard b{font-size:18px}.sourcecard span{display:block;color:#666;font-size:12px;line-height:1.5;margin:8px 0 15px}.sourcecard a,.sourcecard button{border:0;background:none;padding:0;font-size:10px;font-weight:900;color:#111;text-decoration:none;cursor:pointer}.price-note{font-size:10px;color:#777;margin-top:12px}.friendshead{display:flex;justify-content:space-between;align-items:end;gap:30px}.friendshead>p{max-width:470px;color:#666;font-size:13px;line-height:1.6}.friendgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.friendcard{background:#fff;border:1px solid #ddd6c8;border-radius:20px;padding:22px;display:flex;gap:15px}.friendcard h3{margin:7px 0;font-size:19px}.friendcard p{font-size:12px;color:#666;line-height:1.5}.friendtag{font-size:9px;color:#697d31;font-weight:900;letter-spacing:.1em}.avatar{width:48px;height:48px;flex:none;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-size:24px;font-weight:900}.friendcard button{border:0;background:none;font-size:10px;font-weight:900;padding:0;cursor:pointer}.darkfriend{background:#111;color:#fff;border-color:#111}.darkfriend p{color:#aaa}.darkfriend .friendtag{color:var(--lime)}.darkfriend button{color:var(--lime)}@media(max-width:760px){.pricehero,.sourcecards,.friendgrid{grid-template-columns:1fr}.friendshead{display:block}.pricehero h2,.friendshead h2{font-size:50px}}</style><style>
-.mn8stamp{margin-top:18px;display:inline-block;border:1px solid #ffffff2b;border-radius:99px;padding:8px 11px;color:var(--lime);font-size:9px;font-weight:900;letter-spacing:.08em}
-.mn8controls{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:16px 0;background:#fff;border:1px solid #ddd6c8;border-radius:18px;padding:16px 20px;font-size:11px}
-.mn8controls span{color:#777;margin-left:8px}
-.mn8controls label{cursor:pointer}
-.mn8results{display:grid;gap:9px;margin-top:14px}
-.mn8top{display:flex;justify-content:space-between;gap:20px;background:#111;color:#fff;border-radius:18px;padding:18px 20px}
-.mn8top b{display:block;font-size:11px;color:var(--lime)}
-.mn8top span{display:block;color:#aaa;font-size:10px;margin-top:4px}
-.mn8row{display:grid;grid-template-columns:42px 1.7fr .7fr .7fr 1fr;gap:14px;align-items:center;background:#fff;border:1px solid #ddd6c8;border-radius:18px;padding:15px 17px}
-.rank{font-weight:900;font-size:11px;color:#999}
-.mn8name b{display:block;font-size:13px}.mn8name strong{display:block;font-size:13px;margin-top:3px}.mn8name span{display:block;color:#777;font-size:10px;margin-top:5px}
-.mn8metric b{display:block;font-size:15px}.mn8metric span{display:block;color:#777;font-size:9px;margin-top:4px}
-.mn8calc{display:flex;flex-direction:column;gap:3px;color:#555;font-size:9px}
-.mn8empty{background:#fff;border:1px solid #ddd6c8;border-radius:18px;padding:24px;font-size:12px;color:#666}
-@media(max-width:760px){.mn8controls{display:block}.mn8controls label{display:block;margin-top:12px}.mn8top{display:block}.mn8top>div+div{margin-top:10px}.mn8row{grid-template-columns:32px 1fr 1fr}.mn8calc{grid-column:2/-1;display:flex;flex-direction:row;flex-wrap:wrap}.mn8metric{font-size:10px}}
-</style></head>
+:root{--bg:#f2efe7;--ink:#101010;--green:#b7d45a;--green2:#d9ec83;--muted:#68675f;--card:#fffdf7;--line:#d8d3c5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
+nav{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff1a}.navwrap{width:min(1240px,calc(100% - 36px));margin:auto}.logo{font-weight:900;font-size:25px;letter-spacing:-.08em}.logo span{color:var(--green)}.navlinks{display:flex;gap:22px;font-size:11px;font-weight:900;text-transform:uppercase}.navlinks a{color:inherit;text-decoration:none}.navcta{background:var(--green);padding:11px 16px;border-radius:999px;text-decoration:none;color:#111;font-size:10px;font-weight:900}
+.hero{background:#0d0d0d;color:#f8f6ee;overflow:hidden}.hero-inner{padding:65px 0 55px;position:relative}.eyebrow{font-size:10px;font-weight:900;letter-spacing:.2em;color:var(--green);text-transform:uppercase}.hero h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(68px,12vw,148px);line-height:.78;letter-spacing:-.085em;margin:25px 0 30px;max-width:900px}.hero h1 em{font-style:normal;color:var(--green)}.hero-copy{display:flex;justify-content:space-between;gap:30px;align-items:end}.hero-copy p{max-width:510px;color:#bbb;line-height:1.65;font-size:14px;margin:0}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 18px;font-weight:900;font-size:11px;text-decoration:none}.btn.green{background:var(--green);color:#111}.btn.dark{border:1px solid #ffffff33;color:#fff}.orbit{position:absolute;width:420px;height:420px;border:1px solid #ffffff16;border-radius:50%;right:-150px;top:-90px}.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;border:1px solid #ffffff12}.orbit:before{inset:60px}.orbit:after{inset:125px}.sticker{position:absolute;right:80px;bottom:70px;width:115px;height:115px;border-radius:50%;background:var(--green);color:#111;display:grid;place-items:center;text-align:center;font-size:11px;font-weight:900;transform:rotate(12deg);box-shadow:0 18px 50px #0008}
+.marquee{background:var(--green);overflow:hidden;white-space:nowrap;font-weight:900;font-size:12px;text-transform:uppercase;padding:12px 0}.marquee span{display:inline-block;margin-right:35px}
+section{padding:70px 0}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}.sectionhead h2{font-family:"Space Grotesk";font-size:48px;line-height:.9;letter-spacing:-.06em;margin:0}.sectionhead p{max-width:470px;color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+.bento{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.visual{background:#101010;color:#fff;border-radius:28px;min-height:430px;position:relative;overflow:hidden;padding:28px}.visual:before{content:"CHILLERA";position:absolute;right:-20px;bottom:-60px;font-size:130px;font-weight:900;letter-spacing:-.09em;color:#ffffff07}.visual .circle{position:absolute;width:270px;height:270px;border-radius:50%;border:1px solid #ffffff18;right:70px;top:65px}.visual .circle:before{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:var(--green);left:35px;top:75px;box-shadow:90px 75px 0 #fff2}.visual h3{position:absolute;bottom:27px;left:28px;font-size:36px;max-width:330px;line-height:.95;letter-spacing:-.05em;margin:0}.mini-stack{display:grid;gap:16px}.mini{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;min-height:207px}.mini.dark{background:#171717;color:#fff;border:0}.mini .num{font-size:9px;color:#758c32;font-weight:900;letter-spacing:.15em}.mini h3{font-size:24px;line-height:1;margin:35px 0 8px;letter-spacing:-.04em}.mini p{font-size:12px;color:#777;line-height:1.5;margin:0}.mini.dark p{color:#aaa}
+
+.shops{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.shop{background:var(--card);border:1px solid var(--line);border-radius:25px;padding:23px;min-height:270px;display:flex;flex-direction:column;position:relative;overflow:hidden}.shop.featured{background:#101010;color:#fff;border:0}.shop .topline{display:flex;justify-content:space-between;align-items:center}.badge{font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:7px 9px;border-radius:99px;background:var(--green);color:#111}.shop .mark{font-size:28px;font-weight:900;letter-spacing:-.08em}.shop h3{font-size:25px;letter-spacing:-.05em;margin:38px 0 8px}.shop p{font-size:12px;line-height:1.55;color:#777;margin:0}.featured p{color:#aaa}.shop a{margin-top:auto;align-self:flex-start;padding-top:22px;color:inherit;text-decoration:none;font-size:10px;font-weight:900;text-transform:uppercase}.shop a:after{content:" ↗"}.shop:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:var(--green);opacity:.12;right:-45px;bottom:-45px}
+.notice{margin-top:18px;padding:17px 20px;border:1px dashed #aaa493;border-radius:17px;color:#6b685e;font-size:11px;line-height:1.55}
+
+.eventgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.eventcard{border-radius:27px;padding:28px;min-height:290px;background:#101010;color:#fff;position:relative;overflow:hidden}.eventcard.lime{background:var(--green);color:#111}.eventcard .date{font-size:10px;font-weight:900;letter-spacing:.15em}.eventcard h3{font-family:"Space Grotesk";font-size:43px;line-height:.88;letter-spacing:-.07em;max-width:390px;margin:45px 0 12px}.eventcard p{font-size:12px;line-height:1.5;max-width:440px}.eventcard .big{position:absolute;right:15px;bottom:-50px;font-size:150px;font-weight:900;opacity:.07}
+
+.house{background:#101010;color:#fff;border-radius:30px;padding:35px;display:grid;grid-template-columns:1fr .9fr;gap:30px;overflow:hidden}.house h2{font-family:"Space Grotesk";font-size:58px;line-height:.83;letter-spacing:-.07em;margin:18px 0}.house h2 span{color:var(--green)}.house p{color:#aaa;line-height:1.6;font-size:13px;max-width:520px}.house-art{min-height:310px;border:1px solid #ffffff18;border-radius:23px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 35%,#b7d45a33 0 14%,transparent 15%),linear-gradient(145deg,#1b1b1b,#0d0d0d)}.house-art:before{content:"";position:absolute;left:13%;right:13%;bottom:16%;height:48%;background:#fff;border-radius:35px 35px 8px 8px;transform:skewY(-3deg)}.house-art:after{content:"CHILLERA HOUSE";position:absolute;left:24%;bottom:31%;font-size:15px;font-weight:900;color:#111}.person{position:absolute;z-index:2;width:62px;height:62px;border-radius:50%;background:var(--green);bottom:18%;display:grid;place-items:center;font-size:25px}.person.p1{left:18%}.person.p2{left:42%;bottom:21%;background:#fff}.person.p3{right:17%;background:#b7d45a}.music{position:absolute;right:12%;top:15%;font-size:28px}.smoke{position:absolute;left:15%;top:10%;font-size:40px;opacity:.35}
+
+footer{background:#101010;color:#fff;padding:30px 0;font-size:10px}.foot{display:flex;justify-content:space-between;gap:20px}.foot a{color:#fff}.legal{color:#888;max-width:720px;line-height:1.5;margin-top:15px}
+@media(max-width:800px){.navlinks{display:none}.hero-inner{padding:48px 0}.hero h1{font-size:75px}.hero-copy,.sectionhead{display:block}.hero-copy p{margin-bottom:24px}.orbit{width:280px;height:280px;right:-130px}.sticker{right:20px;bottom:20px}.bento,.shops,.eventgrid,.house{grid-template-columns:1fr}.visual{min-height:350px}.shops .shop{min-height:230px}.house-art{min-height:280px}.sectionhead h2{font-size:40px;margin-bottom:16px}.foot{display:block}.foot>*{display:block;margin-bottom:12px}}
+</style>
+</head>
 <body>
-<div class="top"><div class="wrap"><nav class="nav"><div class="brand">JUST <b>CHILLING</b></div><div class="links"><a href="app.html">APKA</a><a href="#start">TERAZ</a><a href="#mapa">MAPA</a><a href="#pass">PASS</a><a href="#sklepy">SKLEPY</a><a href="#blog">BLOG</a><a href="#eventy">EVENTY</a><a href="#chillcamp">CHILLCAMP</a></div><button class="join" onclick="join()">DOŁĄCZ</button></nav></div></div>
+<header class="hero">
+  <div class="navwrap">
+    <nav>
+      <div class="logo">CHILL<span>ERA</span></div>
+      <div class="navlinks"><a href="#sklepy">sklepy</a><a href="#events">events</a><a href="#house">house</a></div>
+      <a class="navcta" href="#sklepy">WEJDŹ</a>
+    </nav>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">KATOWICE / ŚLĄSK / JUST CHILLING</div>
+    <h1>LOKALNIE.<br><em>PO SWOJEMU.</em></h1>
+    <div class="hero-copy">
+      <p>Chillera to przewodnik po miejscach, ludziach, muzyce i wydarzeniach. Teraz dokładamy jedną z najważniejszych zakładek: <b>gdzie kupić legalne produkty konopne i kto jest naszym partnerem.</b></p>
+      <div class="hero-actions"><a class="btn green" href="#sklepy">ZOBACZ SKLEPY ↗</a><a class="btn dark" href="#house">CHILLERA HOUSE</a></div>
+    </div>
+    <div class="orbit"></div><div class="sticker">NO<br>ALCOHOL<br>JUST<br>VIBES</div>
+  </div>
+</header>
+<div class="marquee"><span>🌿 LOCAL GUIDE</span><span>🎧 MUSIC</span><span>🥤 NO ALCOHOL</span><span>📍 KATOWICE</span><span>🤝 PARTNERZY</span><span>🌿 LOCAL GUIDE</span></div>
 
-<header class="hero"><div class="crown">♕</div><h1>JUST <span>CHILLING</span></h1><div class="claim">TU NIC NIE MUSISZ.</div><p><b style="color:#a8c55b">Chillera</b> to lokalna ekipa i przewodnik po świecie Just Chilling. Miejsca, sklepy, muzyka, eventy, weekendy i ludzie, którzy chcą po prostu dobrze spędzać czas.</p><div class="icons"><a class="iconbtn" href="#start"><div class="ico">🪑</div><small>CHILL</small></a><a class="iconbtn" href="#blog"><div class="ico">🎧</div><small>MUZYKA</small></a><a class="iconbtn" href="#mapa"><div class="ico">🗺️</div><small>MIEJSCA</small></a><a class="iconbtn" href="#eventy"><div class="ico">🎟️</div><small>EVENTY</small></a><a class="iconbtn" href="#usmiechnieci"><div class="ico">🐶</div><small>POMAGAMY</small></a><a class="iconbtn" href="#chillcamp"><div class="ico">🌍</div><small>CHILLCAMP</small></a></div></header>
-<div style="background:#a8c55b;color:#111;text-align:center;padding:9px;font-size:11px;font-weight:900"><a href="app.html" style="color:#111;text-decoration:none">📱 OTWÓRZ CHILLERA APP → MAPA • CENY • KALKULATOR • MATI</a></div><div class="band">NIE SPIESZ SIĘ. DOBRZE JEST BYĆ TUTAJ TERAZ.</div><section class="section" id="pass"><div class="passgrid"><div><div class="eyebrow">JUST CHILLING / KARTA</div><h2>CHILLERA PASS</h2><p class="lead">Zapisujesz się raz do Chillery i masz dostęp do programów oraz benefitów naszych partnerów.</p><div class="benefit">🪪 <b>JEDNA KARTA</b> — jeden profil Chillery<br>🏪 <b>PARTNERZY</b> — programy w jednym miejscu<br>🎟️ <b>ZNIŻKI</b> — korzystasz z aktywnych ofert<br>📍 <b>MAPA</b> — sprawdzasz, gdzie działa benefit</div><button class="join" style="margin-top:24px" onclick="join()">DOŁĄCZ DO CHILLERY →</button></div><div class="pass"><div class="label">JUST CHILLING / PASS</div><div class="title">CHILLERA <span>PASS</span></div><div class="qr"></div><div style="margin-top:14px;color:#aaa;font-size:10px">Twoja karta członkowska</div></div></div></section><section class="section" id="start"><div class="friendshead"><div><div class="eyebrow">CHILLERA / TERAZ</div><h2>CO ROBIMY<br><span>W MIEŚCIE?</span></h2></div><p>Nadchodzące wydarzenia, miejsca na jedzenie i piwo — zebrane w jednym miejscu.</p></div><div class="event" style="margin-top:22px"><div class="feature"><div class="date">NAJBLIŻSZE / KATOWICE</div><h3>19–20<br>WRZEŚNIA</h3><p><b>Koncerty przy świecach</b> • Scena Gliwicka 120<br><b>Planszówki w Spodku i MCK</b> • 19–20.09<br><b>Sprzątanie Świata</b> • Zadole • 19.09, 10:00</p><a class="join" style="display:inline-block;text-decoration:none;color:#111" href="https://www.google.com/search?q=wydarzenia+Katowice+wrzesien+2026" target="_blank">WIĘCEJ WYDARZEŃ →</a></div><div class="smallcards"><div class="smallcard"><strong>🍔 GASTRO</strong><span>Pasibus | Better Burger • Chorzowska 107</span></div><div class="smallcard"><strong>🍺 PIWKO</strong><span>Silesia Shot • Dyrekcyjna 10</span></div><div class="smallcard"><strong>🥩 GASTRO + PIWO</strong><span>Sztolnia Chleb Mieso Wino • Chorzowska 109</span></div></div></div></section>
-
-
-
-<section class="section" id="benefity"><div class="friendshead"><div><div class="eyebrow">CHILLERA PASS / PARTNERZY</div><h2>PROGRAMY<br><span>W JEDNYM MIEJSCU.</span></h2></div><p>Tu zbieramy istniejące programy partnerów Chillery. Konkretne zniżki pokazujemy dopiero po ich potwierdzeniu przez partnera.</p></div><div class="friendgrid"><div class="friendcard"><div class="avatar">🌿</div><div><div class="friendtag">PARTNER / SKLEP</div><h3>WUJO</h3><p>Partner lokalny. Program lojalnościowy i profil w przygotowaniu.</p><button onclick="partner()">PARTNER →</button></div></div><div class="friendcard"><div class="avatar">🌿</div><div><div class="friendtag">PARTNER / SKLEP</div><h3>CANNABIS SPOT</h3><p>Partner lokalny. Program lojalnościowy i profil w przygotowaniu.</p><button onclick="partner()">PARTNER →</button></div></div><div class="friendcard"><div class="avatar">🌿</div><div><div class="friendtag">PARTNER / SKLEP</div><h3>LIQUIDER STORE</h3><p>Partner lokalny. Profil w przygotowaniu.</p><button onclick="partner()">PARTNER →</button></div></div></div><div class="sourcecards"><div class="sourcecard"><b>MOJA KARTA</b><span>Po rejestracji użytkownik dostaje dostęp do aktywnych benefitów.</span></div><div class="sourcecard"><b>PARTNERZY</b><span>Każdy partner ma własne zasady programu i własną ofertę.</span></div><div class="sourcecard"><b>CHILLERA</b><span>Zbieramy wszystko w jednym miejscu zamiast osobnych kart.</span></div></div></section>
-
-<section class="section"><div class="passgrid"><div><h2>CHILLERA PASS</h2><p class="lead">Twoja karta. Twoje wejście do świata.</p><div class="benefit">🎁 <b>ZNIŻKI</b> u lokalnych partnerów<br>⭐ <b>PUNKTY</b> za aktywność<br>🎟️ <b>DOSTĘP</b> do wydarzeń<br>🐾 <b>POMAGAMY</b> razem ze społecznością<br>🗺️ <b>QUESTY</b> i nowe miejsca</div></div><div class="pass"><div class="label">JUST CHILLING / PASS</div><div class="title">JUST <span>CHILLING</span></div><div class="qr"></div></div></div></section>
-
-<section class="section" id="mapa"><h2>CHILLERA MAP / KATOWICE</h2><p class="lead">Jedna mapa lokalnego świata Chillery — sklepy konopne, punkty CBD, kliniki i miejsca społeczności. Kliknij kategorię albo punkt.</p>
-<div class="maptools">
-<button class="filter active" data-filter="all">WSZYSTKO</button>
-<button class="filter" data-filter="shop">🌿 SKLEPY</button>
-<button class="filter" data-filter="clinic">⚕️ KLINIKI</button>
-<button class="filter" data-filter="pharmacy">💊 APTEKI</button>
-<button class="filter" data-filter="chill">☕ CHILL</button>
+<section>
+<div class="wrap">
+  <div class="sectionhead"><h2>NOWA<br>CHILLERA</h2><p>Nie robimy kolejnego katalogu. Robimy miejsce, do którego wchodzisz po konkret: dobry spot, dobry sklep, dobry event i ludzie, których warto znać.</p></div>
+  <div class="bento">
+    <div class="visual"><div class="circle"></div><h3>SHOP → BAR → MUSIC → COMMUNITY</h3></div>
+    <div class="mini-stack">
+      <div class="mini dark"><div class="num">01 / PARTNERZY</div><h3>Sklepy, które znamy.</h3><p>Bez przypadkowych linków. Oficjalne strony i konkretne miejsca.</p></div>
+      <div class="mini"><div class="num">02 / FORMAT</div><h3>Chillera House.</h3><p>Bezalkoholowy bar, muzyka, wydarzenia, merch i społeczność.</p></div>
+    </div>
+  </div>
 </div>
-<div class="leaflet-wrap"><div id="chillera-map" class="leaflet-map"></div></div><div class="map-status">Mapa © OpenStreetMap • dane punktów Chillery są rozwijane etapami.</div><div class="realmap" style="display:none">
-<div class="mapgrid"></div>
-<div class="district d1">ŚRÓDMIEŚCIE</div><div class="district d2">KOSZUTKA</div><div class="district d3">ZAŁĘŻE</div><div class="district d4">BOGUCICE</div>
-<div class="maproad r1"></div><div class="maproad r2"></div><div class="maproad r3"></div>
-<div class="map-pin shop-pin" style="left:57%;top:48%" data-type="shop" data-name="Cannabis Spot"><b>🌿</b><span>Cannabis Spot</span></div>
-<div class="map-pin clinic-pin" style="left:63%;top:38%" data-type="clinic" data-name="Klinika Babci Marysi"><b>⚕️</b><span>Klinika Babci Marysi</span></div>
-<div class="map-pin shop-pin" style="left:51%;top:43%" data-type="shop" data-name="Wujo"><b>🌿</b><span>Wujo</span></div>
-<div class="map-pin clinic-pin" style="left:39%;top:50%" data-type="clinic" data-name="KonopnyMed"><b>⚕️</b><span>KonopnyMed</span></div>
-<div class="map-pin clinic-pin" style="left:68%;top:55%" data-type="clinic" data-name="MedCan Clinics"><b>⚕️</b><span>MedCan</span></div>
-</div>
-<div class="placegrid">
-<div class="place" data-type="shop"><div class="tag">🌿 SKLEP</div><h3>Cannabis Spot</h3><p>Dyrekcyjna 4 • Katowice</p><a href="https://www.google.com/maps/search/?api=1&query=Cannabis+Spot+Dyrekcyjna+4+Katowice" target="_blank">OTWÓRZ MAPĘ →</a></div>
-<div class="place" data-type="clinic"><div class="tag">⚕️ KLINIKA</div><h3>Klinika Babci Marysi</h3><p>Warszawska 3 • Katowice</p><a href="https://www.google.com/maps/search/?api=1&query=Klinika+Babci+Marysi+Warszawska+3+Katowice" target="_blank">OTWÓRZ MAPĘ →</a></div>
-<div class="place" data-type="shop"><div class="tag">🌿 SKLEP</div><h3>Wujo</h3><p>plac Marii i Lecha Kaczyńskich 5 • Katowice</p><a href="https://www.google.com/maps/search/?api=1&query=Wujo+plac+Marii+i+Lecha+Kaczyńskich+5+Katowice" target="_blank">OTWÓRZ MAPĘ →</a></div>
-<div class="place" data-type="clinic"><div class="tag">⚕️ KLINIKA</div><h3>KonopnyMed</h3><p>Misjonarzy Oblatów 5 • Katowice</p><a href="https://www.google.com/maps/search/?api=1&query=KonopnyMed+Misjonarzy+Oblatow+5+Katowice" target="_blank">OTWÓRZ MAPĘ →</a></div>
-<div class="place" data-type="clinic"><div class="tag">⚕️ KLINIKA</div><h3>MedCan Clinics</h3><p>Uniwersytecka 13 • Katowice</p><a href="https://www.google.com/maps/search/?api=1&query=MedCan+Clinics+Uniwersytecka+13+Katowice" target="_blank">OTWÓRZ MAPĘ →</a></div>
-<div class="place addplace" data-type="chill"><div class="tag">＋ CHILLERA</div><h3>Dodaj swój punkt</h3><p>Sklep, klinika, gastro, muzyka albo chill zone.</p><button onclick="partner()">DODAJ MIEJSCE →</button></div>
-</div>
-<div class="mapnote">ℹ️ Punkty medyczne są informacyjne. Kwalifikację do terapii i wystawienie recepty podejmuje lekarz. Dostępność produktów w aptekach zmienia się na bieżąco. Lista aptek ma charakter informacyjny.</div>
 </section>
 
-
-<section class="section" id="gdziepolek">
-<div class="pricehero">
-  <div>
-    <div class="eyebrow">CHILLERA / MN8</div>
-    <h2>ILE KUPISZ<br><span>ZA SWÓJ BUDŻET?</span></h2>
-    <p>Chillera bierze cennik MN8 i przelicza go na 5 g, 10 g i 15 g. Wpisz budżet, a poniżej od razu zobaczysz produkty mieszczące się w założonym limicie.</p>
-    <div class="mn8stamp">● ŹRÓDŁO: MN8.PL / CENNIK CANNABIS</div>
+<section id="sklepy">
+<div class="wrap">
+  <div class="sectionhead"><h2>SKLEPY<br>& PARTNERZY</h2><p>Na start kierujemy ludzi bezpośrednio do oficjalnych stron. W przyszłości każdy partner dostanie własną kartę na mapie Chillery.</p></div>
+  <div class="shops">
+    <article class="shop featured">
+      <div class="topline"><span class="badge">PARTNER / KATOWICE</span><span class="mark">CS</span></div>
+      <h3>Cannabis Spot</h3>
+      <p>Sklep stacjonarny przy Dyrekcyjnej 4 w Katowicach + sklep online. Tu zaczynamy rozmowę o współpracy Chillery.</p>
+      <a href="https://cannabis-spot.pl/" target="_blank" rel="noopener">OTWÓRZ CANNABIS SPOT</a>
+    </article>
+    <article class="shop">
+      <div class="topline"><span class="badge">SHOP</span><span class="mark">CN</span></div>
+      <h3>Cannova</h3>
+      <p>Sklep prowadzony przez Cannabis Spot. CBD, CBG i produkty konopne — oficjalny link w jednym miejscu.</p>
+      <a href="https://cannova.pl/" target="_blank" rel="noopener">OTWÓRZ CANNOVA</a>
+    </article>
+    <article class="shop">
+      <div class="topline"><span class="badge">DODAJEMY</span><span class="mark">+</span></div>
+      <h3>Twój sklep</h3>
+      <p>Masz lokal, który pasuje do Chillery? Napisz. Budujemy mapę miejsc, a nie zamknięty katalog.</p>
+      <a href="mailto:kontakt@chillera.pl?subject=Partner%20Chillery">ZGŁOŚ MIEJSCE</a>
+    </article>
   </div>
-  <div class="budgetbox">
-    <div class="budgetlabel">MAM BUDŻET</div>
-    <div class="budgetinput"><input id="budget" type="number" min="0" step="1" value="250" placeholder="np. 250"><b>zł</b></div>
-    <button class="dark" onclick="priceSearch()">PRZELICZ MN8 →</button>
+  <div class="notice"><b>Legalny produkt ≠ dowolny marketing.</b> W Chillerze będziemy linkować do oficjalnych sprzedawców i opisywać produkty zgodnie z ich faktycznym statusem. Przy produktach konopnych sprawdzamy m.in. skład, THC, etykietowanie i kategorię produktu.</div>
+</div>
+</section>
+
+<section id="events">
+<div class="wrap">
+  <div class="sectionhead"><h2>EVENTY<br>BEZ SPINY</h2><p>Muzyka, freestyle, YouTube, food, bezalkoholowe drinki i lokalne marki. Pierwsze wydarzenia będą testem formatu Chillery House.</p></div>
+  <div class="eventgrid">
+    <div class="eventcard"><div class="date">KATOWICE / 001</div><h3>CHILLERA<br>HOUSE</h3><p>Muza, ekipa, freestyle i partnerzy w jednym miejscu. Pierwszy event jako pilotaż przyszłego lokalu.</p><div class="big">01</div></div>
+    <div class="eventcard lime"><div class="date">COMING SOON</div><h3>CHILL<br>CAMP</h3><p>Weekendowy format z muzyką, jedzeniem, aktywnościami i strefami partnerów.</p><div class="big">02</div></div>
   </div>
 </div>
-<div class="mn8controls">
-  <div><b>MINIMUM 5 G</b><span>Porównujemy ceny w jednostkach 5 g.</span></div>
-  <label><input id="feeToggle" type="checkbox" checked> <b>+13 zł / każde 5 g</b><span> opłata do kalkulacji</span></label>
+</section>
+
+<section id="house">
+<div class="wrap">
+  <div class="house">
+    <div><div class="eyebrow">FORMAT / 001</div><h2>CHILLERA<br><span>HOUSE</span></h2><p>Docelowo: lokal w Ligocie lub Panewnikach. Sklep partnerski + bezalkoholowy bar + mała scena + muzyka + content studio. Nie kolejny „bar z CBD”. <b>Miejsce dla ekipy.</b></p><a class="btn green" href="mailto:kontakt@chillera.pl?subject=Chillera%20House">CHCĘ BYĆ PARTNEREM ↗</a></div>
+    <div class="house-art"><div class="smoke">✦</div><div class="music">♫</div><div class="person p1">☻</div><div class="person p2">♪</div><div class="person p3">☻</div></div>
+  </div>
 </div>
-<div id="mn8Results" class="mn8results"></div>
-<div class="price-note">Ceny bazowe pochodzą z cennika MN8. Przeliczenie 5 g / 10 g / 15 g jest kalkulacją. Opłata 13 zł za każde 5 g jest założeniem kalkulatora i wymaga potwierdzenia w konkretnej aptece. Aktualność cen należy sprawdzić w źródle.</div>
-<div class="sourcecards">
-  <div class="sourcecard"><b>MN8</b><span>Źródło cennika, na którym teraz budujemy moduł.</span><a href="https://mn8.pl/" target="_blank">OTWÓRZ MN8 →</a></div>
-  <div class="sourcecard"><b>5 G / 10 G / 15 G</b><span>Każdy produkt jest normalizowany do jednostek 5 g, żeby można było porównać budżet.</span></div>
-  <div class="sourcecard"><b>CHILLERA</b><span>Docelowo dane będą pobierane automatycznie z dozwolonego źródła MN8.</span></div>
+</section>
+
+<footer>
+<div class="wrap">
+  <div class="foot"><b>CHILLERA © 2026</b><span>Katowice / Silesia</span><a href="#sklepy">Sklepy ↑</a></div>
+  <div class="legal">Serwis ma charakter przewodnika i materiału informacyjnego. Informacje o produktach nie stanowią porady medycznej. Produkty konopne podlegają różnym kategoriom prawnym; przed publikacją ofert i akcji promocyjnych sprawdzamy aktualne wymogi. Wydarzenia i zasady uczestnictwa ustala organizator.</div>
 </div>
-</section><section class="section" id="usmiechnieci"><div class="friendshead"><div><div class="eyebrow">CHILLERA / LUDZIE</div><h2>UŚMIECHNIĘCI<br><span>PRZYJACIELE.</span></h2></div><p>Lista lekarzy i miejsc medycznych, które chcą być częścią bardziej ludzkiego doświadczenia pacjenta. Bez oceniania — konkretne informacje, zakres konsultacji i sposób kontaktu.</p></div><div class="friendgrid"><div class="friendcard"><div class="avatar">☺</div><div><div class="friendtag">LEKARZ / PARTNER</div><h3>Tu będzie lekarz</h3><p>Profil: specjalizacja • konsultacje • miasto • informacje o kwalifikacji do terapii.</p><button onclick="alert('Profil lekarza dodamy po potwierdzeniu danych i zgody na publikację.')">DODAJ PROFIL →</button></div></div><div class="friendcard"><div class="avatar">⚕</div><div><div class="friendtag">KLINIKA</div><h3>Tu będzie klinika</h3><p>Profil miejsca, kontakt, mapa i zweryfikowane informacje przekazane przez partnera.</p><button onclick="partner()">ZOSTAŃ PARTNEREM →</button></div></div><div class="friendcard darkfriend"><div class="avatar">✦</div><div><div class="friendtag">CHILLERA</div><h3>Uśmiechnięci Przyjaciele</h3><p>Docelowo otwarty katalog ludzi i miejsc, które pomagają pacjentom przejść przez system spokojniej.</p><button onclick="alert('Zgłoszenia lekarzy i klinik uruchomimy w kolejnym kroku.')">ZGŁOŚ KONTAKT →</button></div></div></div></section>
-<section class="section" id="sklepy"><h2>CHILLERA SHOP MAP</h2><p class="lead">Zaczynamy od Katowic. Profile partnerów będą prowadzić bezpośrednio do ich własnych ofert.</p><div class="shopgrid"><div class="shop"><b>WUJO</b><small>Partner lokalny • profil w przygotowaniu</small><button onclick="partner()">PASS →</button></div><div class="shop"><b>CANNABIS SPOT</b><small>Program lojalnościowy • profil w przygotowaniu</small><button onclick="partner()">PASS →</button></div><div class="shop"><b>LIQUIDER STORE</b><small>Partner lokalny • profil w przygotowaniu</small><button onclick="partner()">PASS →</button></div><div class="shop"><b>+ DODAJ SKLEP</b><small>Chcesz pojawić się na mapie?</small><button onclick="partner()">ZOSTAŃ PARTNEREM →</button></div></div></section>
-
-<section class="section" id="blog"><h2>CHILLERA BLOG</h2><p class="lead">Lokalne historie, miejsca, muzyka, ludzie i rzeczy, które odkrywamy po drodze.</p><div class="bloggrid"><article class="post"><div class="pic"></div><div class="body"><div class="meta">KATOWICE / GUIDE</div><h3>Gdzie dziś chillujemy?</h3><p>Nowe miejsca, stare miejscówki i lokalne odkrycia.</p></div></article><article class="post"><div class="pic"></div><div class="body"><div class="meta">MUZYKA / EKIPA</div><h3>Chillera Sessions</h3><p>Koncerty, freestyle, lokalni artyści i nasze własne nagrania.</p></div></article><article class="post"><div class="pic"></div><div class="body"><div class="meta">LIFE / JUST CHILLING</div><h3>Tu nic nie musisz</h3><p>Historie ludzi, którzy robią rzeczy po swojemu.</p></div></article></div></section>
-
-<section class="section" id="eventy"><h2>CHILLERA EVENT</h2><p class="lead">Nie pojedyncza impreza. Budujemy cały weekend.</p><div class="event"><div class="feature"><div class="date">DZIEŃ CHŁOPAKA / CHILLERA WEEKEND</div><h3>JUST<br>CHILLING.</h3><p>Muzyka, koncerty, chill zone, jedzenie, gry, sauna / basen, goście i własna ekipa. Miejsce wydarzenia ogłosimy wraz z partnerem.</p><button class="join" onclick="joinEvent()">JESTEM ZAINTERESOWANY →</button></div><div class="smallcards"><div class="smallcard"><strong>PIĄTEK — START</strong><span>Welcome chill • muzyka • poznajemy ekipę</span></div><div class="smallcard"><strong>SOBOTA — CHILLERA</strong><span>Koncerty • atrakcje • questy • wieczorna impreza</span></div><div class="smallcard"><strong>NIEDZIELA — CHILL</strong><span>Śniadanie • chill zone • podsumowanie • powrót</span></div></div></div></section>
-
-<section class="section" id="eventy"><div class="friendshead"><div><div class="eyebrow">CHILLERA / EVENTY</div><h2>CO SIĘ<br><span>DZIEJE?</span></h2></div><p>Weekendowy radar Chillery. Zbieramy koncerty, melanże, klubowe noce i rzeczy, na które faktycznie można wyskoczyć w Katowicach.</p></div><div class="event" style="margin-top:22px"><div class="feature"><div class="date">SOBOTA / 19.09.2026</div><h3>HIPNOZA<br>MELANŻ.</h3><p><b>Jazz Club Hipnoza • pl. Sejmu Śląskiego 2</b><br>Melanż zgłoszony do naszego radaru na sobotę. Szczegóły wydarzenia wymagają jeszcze potwierdzenia w oficjalnym kanale Hipnozy.</p><a class="join" style="display:inline-block;text-decoration:none;color:#111" href="https://www.google.com/search?q=Hipnoza+Katowice+19.09.2026+melanz" target="_blank">SPRAWDŹ INFO ↗</a></div><div class="smallcards"><div class="smallcard"><strong>⚡ GIUSEPPE OTTAVIANI</strong><span>19.09 • 21:30 • Energy 2000 Katowice • 18+ • od 79 zł</span><a href="https://katowice.energy2000.pl/imprezy/giuseppe-ottaviani-%E2%98%85-energy-2000-katowice-2/" target="_blank" style="display:inline-block;margin-top:12px;font-size:10px;font-weight:900">INFO / BILETY →</a></div><div class="smallcard"><strong>🕯️ VIVA ESPAÑA</strong><span>19.09 • 18:00 • Scena Gliwicka 120</span><a href="https://www.eventim.pl/event/koncert-przy-swiecach-viva-espana-hiszpanska-noc-przy-swiecach-scena-gliwicka-21947366/" target="_blank" style="display:inline-block;margin-top:12px;font-size:10px;font-weight:900">INFO / BILETY →</a></div><div class="smallcard"><strong>🎲 PLANSZÓWKI</strong><span>19–20.09 • Spodek i MCK</span><a href="#start" style="display:inline-block;margin-top:12px;font-size:10px;font-weight:900">WRÓĆ DO TERAZ →</a></div></div></div><div class="mapnote">ℹ️ Daty wydarzeń powyżej sprawdzone w publicznych źródłach. Hipnoza: nie znalazłem indeksowanej oficjalnej strony potwierdzającej jutrzejszy melanż, dlatego oznaczam go jako <b>do potwierdzenia</b>, zamiast wymyślać szczegóły.</div></section><section class="section" id="chillcamp"><h2>CHILLCAMP</h2><p class="lead">Weekendowy format Chillery: jedno miejsce, jedna ekipa, dużo muzyki i jeszcze więcej luzu.</p><div class="cols"><div class="card"><div class="num">01 / CAMP</div><h3>Wspólny wyjazd</h3><p>Obiekt partnerski + nocleg + strefy chill + aktywności.</p></div><div class="card"><div class="num">02 / LIVE</div><h3>Koncerty</h3><p>Lokalni artyści, DJ-e, sesje i własny program muzyczny.</p></div><div class="card"><div class="num">03 / QUEST</div><h3>Chillera Quest</h3><p>Gry terenowe, punkty, odkrywanie miejsca i nagrody.</p></div></div></section>
-
-<section class="section" id="ekipa"><div class="cta"><div><h2>MASZ MIEJSCE,<br>MARKĘ ALBO EKIPĘ?</h2><p>Dołącz do Chillery i zbudujmy ten weekend razem.</p></div><button class="dark" onclick="partner()">ZOSTAŃ PARTNEREM →</button></div></section>
-<div class="footer"><span>© 2026 JUST <b>CHILLING</b> / CHILLERA</span><span>KATOWICE / ŚLĄSK • <b>NIe SPIESZ SIĘ.</b></span></div>
-<script>
-function join(){alert('Chillera Pass — rejestracja dodamy w kolejnym kroku.')}
-function partner(){alert('Formularz partnerski dodamy w kolejnym kroku.')}
-function joinEvent(){alert('Lista zainteresowanych Chillerą Weekend — dodamy w kolejnym kroku.')}
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
- const type=btn.dataset.filter;
- document.querySelectorAll('.place,.map-pin').forEach(el=>el.style.display=(type==='all'||el.dataset.type===type)?'':'none');
-}));
-document.querySelectorAll('.map-pin').forEach(pin=>pin.addEventListener('click',()=>alert(pin.dataset.name+' — profil Chillery dodamy w kolejnym kroku.')));
-</script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
-(function(){
- const places=[
- {type:'shop',name:'Cannabis Spot',address:'Dyrekcyjna 4, Katowice',lat:50.2588,lng:19.0237,icon:'🌿'},
- {type:'shop',name:'Wujo',address:'pl. Marii i Lecha Kaczyńskich 5, Katowice',lat:50.2621,lng:19.0159,icon:'🌿'},
- {type:'shop',name:'Liquider Store',address:'Mickiewicza 4, Katowice',lat:50.2600,lng:19.0230,icon:'🌿'},
- {type:'shop',name:'Liquider Store / Stockmeyer',address:'Słupska 12, Katowice',lat:50.2710,lng:19.0070,icon:'🌿'},
- {type:'clinic',name:'Klinika Babci Marysi',address:'Warszawska 3, Katowice',lat:50.2612,lng:19.0246,icon:'⚕️'},
- {type:'clinic',name:'aSpot Clinics',address:'Warszawska 40, Katowice',lat:50.2607,lng:19.0290,icon:'⚕️'},
- {type:'clinic',name:'Curaleaf Centrum Medyczne',address:'Dąbrowskiego 22, Katowice',lat:50.2509,lng:19.0282,icon:'⚕️'},
- {type:'clinic',name:'Zioło24',address:'Śląska 26, Katowice',lat:50.2458,lng:18.9860,icon:'⚕️'},
- {type:'clinic',name:'Recepta Marihuana',address:'Mariacka 37, Katowice',lat:50.2580,lng:19.0272,icon:'⚕️'},
- {type:'clinic',name:'KonopnyMed',address:'Misjonarzy Oblatów 5, Katowice',lat:50.2667,lng:19.0277,icon:'⚕️'},
- {type:'clinic',name:'MedCan Clinics',address:'Józefowska 76, Katowice',lat:50.2700,lng:19.0105,icon:'⚕️'},
- {type:'pharmacy',name:'Premium-Lek',address:'Misjonarzy Oblatów 8, Katowice',lat:50.2665,lng:19.0279,icon:'💊'},
- {type:'pharmacy',name:'Premium-Lek',address:'Józefowska 100, Katowice',lat:50.2705,lng:19.0125,icon:'💊'},
- {type:'pharmacy',name:'Apteka Główna Centrum Niskich Cen',address:'pl. Marii i Lecha Kaczyńskich 5, Katowice',lat:50.2621,lng:19.0159,icon:'💊'},
- {type:'pharmacy',name:'Gemini',address:'Zawiszy Czarnego 7A, Katowice',lat:50.2670,lng:19.0160,icon:'💊'},
- {type:'pharmacy',name:'Medicare Apteka',address:'Jagiellońska 4, Katowice',lat:50.2538,lng:19.0248,icon:'💊'},
- {type:'pharmacy',name:'Apteka św. Jana',address:'św. Jana 10, Katowice',lat:50.2577,lng:19.0249,icon:'💊'},
- {type:'pharmacy',name:'Super-Pharm',address:'3-go Maja 30, Katowice',lat:50.2587,lng:19.0230,icon:'💊'},
- {type:'pharmacy',name:'Super-Pharm',address:'Chorzowska 107, Katowice',lat:50.2652,lng:19.0022,icon:'💊'},
- {type:'pharmacy',name:'Apteka Fantazja',address:'Roździeńskiego 200, Katowice',lat:50.2670,lng:19.0610,icon:'💊'},
- {type:'pharmacy',name:'Medicare Apteka',address:'gen. Jankego 15D, Katowice',lat:50.2315,lng:19.0120,icon:'💊'},
- {type:'pharmacy',name:'Apteka Główna',address:'Szewska 11 lok. 9, Katowice',lat:50.2630,lng:19.0220,icon:'💊'}
- ];
- function init(){
-  const el=document.getElementById('chillera-map'); if(!el||typeof L==='undefined')return;
-  const map=L.map(el,{scrollWheelZoom:false}).setView([50.259,19.024],14);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(map);
-  const markers=[];
-  places.forEach(p=>{
-   const marker=L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',html:'<div class="leaflet-pin">'+p.icon+'</div>',iconSize:[38,38],iconAnchor:[19,19]})});
-   marker.bindTooltip(p.icon+' '+p.name,{permanent:true,direction:'top',offset:[0,-18],className:'chillera-label'});\n   marker.bindPopup('<h3>'+p.icon+' '+p.name+'</h3><p>'+p.address+'</p><a class="leaflet-btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(p.name+' '+p.address)+'">NAWIGUJ →</a>');
-   marker.addTo(map); markers.push({p,marker});
-  });
-  document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
-   const type=btn.dataset.filter;
-   markers.forEach(x=>{if(type==='all'||x.p.type===type)x.marker.addTo(map);else map.removeLayer(x.marker);});
-  }));
-  setTimeout(()=>map.invalidateSize(),250);
- }
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
-})();
-</script><script>
-const mn8Products=[
-{name:'AURORA THC 20%',strain:'PINK KUSH',g:10,price:511},
-{name:'AURORA THC 22%',strain:'DELHAZE SATIVA',g:10,price:518},
-{name:'AURORA THC 22%',strain:'GHOST TRAIN HAZE',g:10,price:512},
-{name:'AURORA THC 27%',strain:'BLACK JELLY',g:10,price:365},
-{name:'AURORA THC 27%',strain:'ELECTRIC HONEY',g:10,price:361},
-{name:'AURORA THC 27%',strain:'FARM GAS',g:10,price:298},
-{name:'AURORA THC 29%',strain:'CHEMANGO KUSH',g:10,price:299},
-{name:'BLISS PHARMA THC 22%',strain:'OG KUSH',g:10,price:365},
-{name:'BLISS PHARMA THC 25%',strain:'STRAWBERRY OG',g:10,price:375},
-{name:'CANTOURAGE THC 26%',strain:'GELATO 33',g:10,price:478},
-{name:'CANTOURAGE THC 25%',strain:'MAC-1',g:10,price:454},
-{name:'CANTOURAGE THC 27.3%',strain:'PAVE S1',g:10,price:473},
-{name:'CANTOURAGE THC 26.3%',strain:'MODIFIED GAS',g:10,price:473},
-{name:'CANTOURAGE THC 27.9%',strain:'GARYKE',g:10,price:473},
-{name:'COSMA THC 20%',strain:'ORANGE CREAM POP',g:10,price:351},
-{name:'COSMA THC 21%',strain:'BLUE MONDAY',g:10,price:351},
-{name:'COSMA THC 22%',strain:'HINDU KUSH',g:10,price:351},
-{name:'COSMA THC 22%',strain:'BLACK RUSSIAN',g:10,price:351},
-{name:'CANOPY GROWTH THC 19%',strain:'REDNO 2 - JACK HAZE',g:5,price:271},
-{name:'CANOPY GROWTH THC 20%',strain:'BAKER STREET',g:5,price:155},
-{name:'CANOPY GROWTH THC 25%',strain:'AFGHAN KUSH',g:15,price:554},
-{name:'CANOPY GROWTH THC 25%',strain:'SNOWTROUS',g:15,price:554},
-{name:'CANOPY GROWTH THC 29%',strain:'BLOOD ORANGE',g:15,price:591},
-{name:'CANOPY GROWTH THC 30%',strain:'KUSH MINTS',g:15,price:591},
-{name:'FOUR20 PHARMA THC 22%',strain:'GORILLA GLUE',g:15,price:405},
-{name:'FOUR20 PHARMA THC 22%',strain:'MAC1 HYBRYDA',g:15,price:476},
-{name:'FOUR20 PHARMA THC 25%',strain:'MAC1 HYBRYDA',g:15,price:494},
-{name:'FOUR20 PHARMA THC 27%',strain:'GASTRO POP',g:15,price:583},
-{name:'FOUR20 PHARMA THC 27%',strain:'MASTERPIECE',g:15,price:476},
-{name:'FOUR20 PHARMA THC 27%',strain:'GASTRO POP',g:15,price:512},
-{name:'FOUR20 PHARMA THC 27%',strain:'FROZEN LEMON MINTS',g:15,price:512},
-{name:'PHYTUR BIO THC 24%',strain:'PURPLE DRAGON',g:10,price:218},
-{name:'PHYTUR BIO THC 24%',strain:'GORILLA GLUE',g:10,price:503},
-{name:'SUPROBION THC 23%',strain:'MYSTIC WONDER',g:10,price:198},
-{name:'SUPROBION THC 23%',strain:'GORILLA GLUE',g:10,price:156},
-{name:'SYNOPTIS THC 22%',strain:'MASTER KUSH',g:15,price:293},
-{name:'SYNOPTIS THC 22%',strain:'HAYMAKER',g:15,price:465},
-{name:'SYNOPTIS THC 22%',strain:'PURPS',g:15,price:338},
-{name:'SYNOPTIS THC 25%',strain:'POWDERED DONUTS',g:15,price:585},
-{name:'SYNOPTIS THC 25%',strain:'TRIANGLE MINTS',g:15,price:585},
-{name:'S-LAB 18%',strain:'LEMON HAZE GELATO',g:15,price:452},
-{name:'S-LAB 22%',strain:'WEDDING PIE',g:15,price:452},
-{name:'TILRAY 18%',strain:'HEADBAND',g:15,price:337},
-{name:'TILRAY THC 22%',strain:'CATARACT',g:15,price:337},
-{name:'TILRAY THC 22%',strain:'MASTER KUSH',g:15,price:337},
-{name:'TILRAY THC 22%',strain:'PINK KUSH',g:15,price:337},
-{name:'TILRAY THC 22%',strain:'LILAC DIESEL',g:15,price:337},
-{name:'TILRAY THC 22%',strain:'BLUE BERRY',g:15,price:337}
-];
-
-function renderMN8(){
- const box=document.getElementById('mn8Results'); if(!box)return;
- const budget=Math.max(0,Number(document.getElementById('budget').value)||0);
- const feeOn=document.getElementById('feeToggle')?.checked;
- const fee=feeOn?13:0;
- const rows=mn8Products.map(p=>{
-   const unit=p.price/p.g*5+fee;
-   const units=Math.floor(budget/unit);
-   const grams=units*5;
-   return {...p,unit,units,grams,within:grams>0};
- }).filter(x=>x.within).sort((a,b)=>b.grams-a.grams || a.unit-b.unit || a.price-b.price);
-
- if(!budget){box.innerHTML='<div class="mn8empty">Wpisz budżet, żeby policzyć.</div>';return;}
- if(!rows.length){box.innerHTML='<div class="mn8empty">Brak pozycji mieszczących się w tym budżecie. Zwiększ budżet albo wyłącz opłatę 13 zł.</div>';return;}
-
- box.innerHTML='<div class="mn8top"><div><b>MN8 / WYNIKI</b><span>'+rows.length+' pozycji mieści się w budżecie '+budget.toFixed(0)+' zł</span></div><div><b>NAJWIĘCEJ GRAMÓW</b><span>liczone w jednostkach po 5 g</span></div></div>'+
- rows.slice(0,18).map((p,i)=>{
-   const pack5=p.price/p.g*5;
-   const pack10=p.price/p.g*10;
-   const pack15=p.price/p.g*15;
-   return '<article class="mn8row"><div class="rank">'+String(i+1).padStart(2,'0')+'</div><div class="mn8name"><b>'+p.name+'</b><strong>'+p.strain+'</strong><span>'+p.g+' g • cena z cennika: '+p.price+' zł</span></div><div class="mn8metric"><b>'+p.unit.toFixed(2)+' zł</b><span>/ 5 g '+(feeOn?'(+13 zł)':'')+'</span></div><div class="mn8metric"><b>'+p.grams+' g</b><span>za '+(p.grams/5*p.unit).toFixed(2)+' zł</span></div><div class="mn8calc"><span>5 g ≈ '+(pack5+fee).toFixed(2)+' zł</span><span>10 g ≈ '+(pack10+fee*2).toFixed(2)+' zł</span><span>15 g ≈ '+(pack15+fee*3).toFixed(2)+' zł</span></div></article>';
- }).join('');
-}
-
-function priceSearch(){renderMN8();document.getElementById('mn8Results')?.scrollIntoView({behavior:'smooth',block:'start'});}
-document.getElementById('budget')?.addEventListener('input',renderMN8);
-document.getElementById('feeToggle')?.addEventListener('change',renderMN8);
-document.addEventListener('DOMContentLoaded',renderMN8);
-</script></body></html>
+</footer>
+</body>
+</html>
