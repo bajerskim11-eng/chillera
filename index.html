@@ -1,119 +1,108 @@
 <!doctype html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0d0d0d">
-<title>CHILLERA — Katowice / music / culture / chill</title>
-<meta name="description" content="Chillera — lokalny przewodnik po miejscach, muzyce, wydarzeniach i legalnych produktach konopnych. Katowice.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0b0b0a">
+<title>Chillera — TV, Club & Katowice</title>
+<meta name="description" content="Chillera — lokalna platforma lifestyle, video, twórcy, wydarzenia i Club 18+." />
 <style>
-:root{--bg:#f2efe7;--ink:#101010;--green:#b7d45a;--green2:#d9ec83;--muted:#68675f;--card:#fffdf7;--line:#d8d3c5}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
-nav{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff1a}.navwrap{width:min(1240px,calc(100% - 36px));margin:auto}.logo{font-weight:900;font-size:25px;letter-spacing:-.08em}.logo span{color:var(--green)}.navlinks{display:flex;gap:22px;font-size:11px;font-weight:900;text-transform:uppercase}.navlinks a{color:inherit;text-decoration:none}.navcta{background:var(--green);padding:11px 16px;border-radius:999px;text-decoration:none;color:#111;font-size:10px;font-weight:900}
-.hero{background:#0d0d0d;color:#f8f6ee;overflow:hidden}.hero-inner{padding:65px 0 55px;position:relative}.eyebrow{font-size:10px;font-weight:900;letter-spacing:.2em;color:var(--green);text-transform:uppercase}.hero h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(68px,12vw,148px);line-height:.78;letter-spacing:-.085em;margin:25px 0 30px;max-width:900px}.hero h1 em{font-style:normal;color:var(--green)}.hero-copy{display:flex;justify-content:space-between;gap:30px;align-items:end}.hero-copy p{max-width:510px;color:#bbb;line-height:1.65;font-size:14px;margin:0}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 18px;font-weight:900;font-size:11px;text-decoration:none}.btn.green{background:var(--green);color:#111}.btn.dark{border:1px solid #ffffff33;color:#fff}.orbit{position:absolute;width:420px;height:420px;border:1px solid #ffffff16;border-radius:50%;right:-150px;top:-90px}.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;border:1px solid #ffffff12}.orbit:before{inset:60px}.orbit:after{inset:125px}.sticker{position:absolute;right:80px;bottom:70px;width:115px;height:115px;border-radius:50%;background:var(--green);color:#111;display:grid;place-items:center;text-align:center;font-size:11px;font-weight:900;transform:rotate(12deg);box-shadow:0 18px 50px #0008}
-.marquee{background:var(--green);overflow:hidden;white-space:nowrap;font-weight:900;font-size:12px;text-transform:uppercase;padding:12px 0}.marquee span{display:inline-block;margin-right:35px}
-section{padding:70px 0}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}.sectionhead h2{font-family:"Space Grotesk";font-size:48px;line-height:.9;letter-spacing:-.06em;margin:0}.sectionhead p{max-width:470px;color:var(--muted);font-size:13px;line-height:1.6;margin:0}
-.bento{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}.visual{background:#101010;color:#fff;border-radius:28px;min-height:430px;position:relative;overflow:hidden;padding:28px}.visual:before{content:"CHILLERA";position:absolute;right:-20px;bottom:-60px;font-size:130px;font-weight:900;letter-spacing:-.09em;color:#ffffff07}.visual .circle{position:absolute;width:270px;height:270px;border-radius:50%;border:1px solid #ffffff18;right:70px;top:65px}.visual .circle:before{content:"";position:absolute;width:90px;height:90px;border-radius:50%;background:var(--green);left:35px;top:75px;box-shadow:90px 75px 0 #fff2}.visual h3{position:absolute;bottom:27px;left:28px;font-size:36px;max-width:330px;line-height:.95;letter-spacing:-.05em;margin:0}.mini-stack{display:grid;gap:16px}.mini{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;min-height:207px}.mini.dark{background:#171717;color:#fff;border:0}.mini .num{font-size:9px;color:#758c32;font-weight:900;letter-spacing:.15em}.mini h3{font-size:24px;line-height:1;margin:35px 0 8px;letter-spacing:-.04em}.mini p{font-size:12px;color:#777;line-height:1.5;margin:0}.mini.dark p{color:#aaa}
-
-.shops{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.shop{background:var(--card);border:1px solid var(--line);border-radius:25px;padding:23px;min-height:270px;display:flex;flex-direction:column;position:relative;overflow:hidden}.shop.featured{background:#101010;color:#fff;border:0}.shop .topline{display:flex;justify-content:space-between;align-items:center}.badge{font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:7px 9px;border-radius:99px;background:var(--green);color:#111}.shop .mark{font-size:28px;font-weight:900;letter-spacing:-.08em}.shop h3{font-size:25px;letter-spacing:-.05em;margin:38px 0 8px}.shop p{font-size:12px;line-height:1.55;color:#777;margin:0}.featured p{color:#aaa}.shop a{margin-top:auto;align-self:flex-start;padding-top:22px;color:inherit;text-decoration:none;font-size:10px;font-weight:900;text-transform:uppercase}.shop a:after{content:" ↗"}.shop:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:var(--green);opacity:.12;right:-45px;bottom:-45px}
-.notice{margin-top:18px;padding:17px 20px;border:1px dashed #aaa493;border-radius:17px;color:#6b685e;font-size:11px;line-height:1.55}
-
-.eventgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.eventcard{border-radius:27px;padding:28px;min-height:290px;background:#101010;color:#fff;position:relative;overflow:hidden}.eventcard.lime{background:var(--green);color:#111}.eventcard .date{font-size:10px;font-weight:900;letter-spacing:.15em}.eventcard h3{font-family:"Space Grotesk";font-size:43px;line-height:.88;letter-spacing:-.07em;max-width:390px;margin:45px 0 12px}.eventcard p{font-size:12px;line-height:1.5;max-width:440px}.eventcard .big{position:absolute;right:15px;bottom:-50px;font-size:150px;font-weight:900;opacity:.07}
-
-.house{background:#101010;color:#fff;border-radius:30px;padding:35px;display:grid;grid-template-columns:1fr .9fr;gap:30px;overflow:hidden}.house h2{font-family:"Space Grotesk";font-size:58px;line-height:.83;letter-spacing:-.07em;margin:18px 0}.house h2 span{color:var(--green)}.house p{color:#aaa;line-height:1.6;font-size:13px;max-width:520px}.house-art{min-height:310px;border:1px solid #ffffff18;border-radius:23px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 35%,#b7d45a33 0 14%,transparent 15%),linear-gradient(145deg,#1b1b1b,#0d0d0d)}.house-art:before{content:"";position:absolute;left:13%;right:13%;bottom:16%;height:48%;background:#fff;border-radius:35px 35px 8px 8px;transform:skewY(-3deg)}.house-art:after{content:"CHILLERA HOUSE";position:absolute;left:24%;bottom:31%;font-size:15px;font-weight:900;color:#111}.person{position:absolute;z-index:2;width:62px;height:62px;border-radius:50%;background:var(--green);bottom:18%;display:grid;place-items:center;font-size:25px}.person.p1{left:18%}.person.p2{left:42%;bottom:21%;background:#fff}.person.p3{right:17%;background:#b7d45a}.music{position:absolute;right:12%;top:15%;font-size:28px}.smoke{position:absolute;left:15%;top:10%;font-size:40px;opacity:.35}
-
-footer{background:#101010;color:#fff;padding:30px 0;font-size:10px}.foot{display:flex;justify-content:space-between;gap:20px}.foot a{color:#fff}.legal{color:#888;max-width:720px;line-height:1.5;margin-top:15px}
-@media(max-width:800px){.navlinks{display:none}.hero-inner{padding:48px 0}.hero h1{font-size:75px}.hero-copy,.sectionhead{display:block}.hero-copy p{margin-bottom:24px}.orbit{width:280px;height:280px;right:-130px}.sticker{right:20px;bottom:20px}.bento,.shops,.eventgrid,.house{grid-template-columns:1fr}.visual{min-height:350px}.shops .shop{min-height:230px}.house-art{min-height:280px}.sectionhead h2{font-size:40px;margin-bottom:16px}.foot{display:block}.foot>*{display:block;margin-bottom:12px}}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#0b0b0a;--paper:#f2f0e9;--ink:#11110f;--lime:#c8f24a;--muted:#a6a49d;--line:#272724;--card:#151513;--white:#faf9f4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:'DM Sans',system-ui,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}
+.wrap{width:min(1240px,calc(100% - 36px));margin:auto}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}
+.logo{font-family:'Space Grotesk';font-weight:700;letter-spacing:-.07em;font-size:30px}.logo i{color:var(--lime);font-style:normal}.navlinks{display:flex;gap:5px}.navlinks a{padding:10px 13px;border-radius:99px;color:#bdbbb4;font-size:12px}.navlinks a:hover{background:#1b1b18;color:#fff}.navright{display:flex;gap:8px;align-items:center}.club{background:var(--lime);color:#10100e!important;font-weight:700}.icon{border:1px solid var(--line);width:39px;height:39px;border-radius:50%;display:grid;place-items:center;color:#ddd}
+.hero{min-height:650px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:end;padding:65px 0 52px;position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 72% 40%,#c8f24a18,transparent 32%),linear-gradient(135deg,#0b0b0a 35%,#11120f 100%);z-index:-2}
+.hero:after{content:'CHILLERA';position:absolute;right:-5%;bottom:-90px;font-family:'Space Grotesk';font-size:clamp(130px,20vw,310px);font-weight:700;letter-spacing:-.1em;color:#fff004;opacity:.035;z-index:-1}
+.kicker{font-size:10px;letter-spacing:.18em;color:var(--lime);font-weight:700;text-transform:uppercase}.hero h1{font-family:'Space Grotesk';font-size:clamp(60px,9vw,126px);line-height:.82;letter-spacing:-.075em;margin:18px 0 24px;max-width:800px}.hero h1 span{color:var(--lime)}.hero p{max-width:590px;color:#aaa89f;font-size:16px;line-height:1.65;margin:0 0 30px}.heroactions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:1px solid #363632;background:#171715;padding:13px 17px;border-radius:999px;font-size:12px;font-weight:700}.btn.primary{background:var(--lime);border-color:var(--lime);color:#10100e}.hero-side{align-self:end}.hero-card{height:360px;border-radius:30px;background:linear-gradient(145deg,#25261f,#11120f 65%);border:1px solid #30302b;position:relative;overflow:hidden;box-shadow:0 35px 80px #000}.hero-card .orb{position:absolute;width:310px;height:310px;border-radius:50%;right:-70px;top:-45px;background:radial-gradient(circle at 35% 35%,#dfff79,#87a92b 38%,#20251a 72%);filter:saturate(.8)}.hero-card .copy{position:absolute;left:25px;bottom:25px}.hero-card strong{display:block;font-family:'Space Grotesk';font-size:35px;letter-spacing:-.06em}.hero-card small{color:#a7a69f}.live{position:absolute;top:20px;left:20px;background:#fff;color:#111;padding:7px 10px;border-radius:99px;font-size:9px;font-weight:700}
+.section{padding:70px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}.section h2{font-family:'Space Grotesk';font-size:clamp(32px,5vw,58px);letter-spacing:-.065em;line-height:.9;margin:7px 0}.sub{color:#85837c;font-size:13px;max-width:460px;line-height:1.5}.arrow{font-size:12px;color:var(--lime)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.media{min-height:260px;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#141412;position:relative;transition:.25s}.media:hover{transform:translateY(-4px);border-color:#4a4a43}.visual{height:190px;background:linear-gradient(145deg,#20231a,#0e0e0d);position:relative;overflow:hidden}.visual:before{content:'';position:absolute;width:180px;height:180px;border-radius:50%;background:#c8f24a;right:-50px;top:-50px;opacity:.85;filter:blur(1px)}.visual.v2{background:linear-gradient(145deg,#25201c,#0e0e0d)}.visual.v2:before{background:#ff8f4a}.visual.v3{background:linear-gradient(145deg,#191d23,#0e0e0d)}.visual.v3:before{background:#8fd8ff}.visual.v4{background:linear-gradient(145deg,#201d26,#0e0e0d)}.visual.v4:before{background:#d39aff}.play{position:absolute;left:15px;bottom:14px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#111}.tag{position:absolute;top:13px;left:13px;background:#0b0b0add;border:1px solid #ffffff24;padding:6px 8px;border-radius:99px;font-size:8px;letter-spacing:.1em}.mediacopy{padding:15px}.mediacopy h3{margin:0 0 7px;font-family:'Space Grotesk';font-size:17px;letter-spacing:-.03em}.mediacopy p{margin:0;color:#77766f;font-size:10px;line-height:1.45}
+.feature{display:grid;grid-template-columns:1.35fr .65fr;gap:12px}.bigcard{min-height:430px;border-radius:28px;border:1px solid var(--line);overflow:hidden;background:linear-gradient(135deg,#1b2114,#0d0e0b);position:relative;padding:30px;display:flex;flex-direction:column;justify-content:end}.bigcard:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,#c8f24a33,transparent 32%)}.bigcard>*{position:relative}.bigcard h3{font-family:'Space Grotesk';font-size:clamp(34px,5vw,62px);letter-spacing:-.07em;line-height:.86;margin:10px 0;max-width:600px}.sidecards{display:grid;gap:12px}.mini{border:1px solid var(--line);border-radius:24px;padding:23px;background:var(--card);min-height:140px}.mini h3{font-family:'Space Grotesk';font-size:25px;letter-spacing:-.05em;margin:6px 0}.mini p{font-size:10px;color:#777;line-height:1.5;margin:0}.mini .num{color:var(--lime);font-size:10px;font-weight:700}
+.clubsection{background:var(--paper);color:var(--ink);border-radius:34px;padding:40px;margin:0 0 70px;overflow:hidden;position:relative}.clubsection:after{content:'18+';position:absolute;right:-20px;top:-85px;font-family:'Space Grotesk';font-size:300px;font-weight:700;color:#111;opacity:.045}.clubgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;position:relative;z-index:1}.clubsection h2{font-family:'Space Grotesk';font-size:clamp(45px,7vw,88px);letter-spacing:-.08em;line-height:.8;margin:10px 0 25px}.clubsection h2 span{color:#7b971f}.clubsection p{color:#5f5e59;line-height:1.6;max-width:570px}.features{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:25px}.feat{border:1px solid #d5d1c5;border-radius:17px;padding:15px}.feat b{font-size:11px}.feat span{display:block;color:#77736b;font-size:9px;margin-top:5px}.join{background:#111;color:#fff;border-radius:26px;padding:25px;align-self:stretch}.join h3{font-family:'Space Grotesk';font-size:33px;letter-spacing:-.06em;margin:5px 0 12px}.join .input{background:#1b1b18;border:1px solid #333;border-radius:13px;padding:13px;color:#fff;width:100%;margin:7px 0;font-size:12px}.join button{width:100%;border:0;background:var(--lime);padding:14px;border-radius:99px;font-weight:700;margin-top:7px;cursor:pointer}
+.creators{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.creator{border:1px solid var(--line);border-radius:23px;padding:20px;background:#11110f;display:flex;gap:15px;align-items:center}.avatar{width:58px;height:58px;border-radius:50%;background:linear-gradient(145deg,#c8f24a,#2a3020);display:grid;place-items:center;color:#111;font-family:'Space Grotesk';font-weight:700;font-size:19px}.creator b{font-family:'Space Grotesk';font-size:18px}.creator span{display:block;color:#777;font-size:10px;margin-top:4px}
+.footer{border-top:1px solid var(--line);padding:40px 0 70px;color:#666;font-size:10px}.footgrid{display:flex;justify-content:space-between;gap:30px}.footlogo{font-family:'Space Grotesk';font-size:28px;color:#fff;letter-spacing:-.07em}.footlogo i{color:var(--lime);font-style:normal}.footer a{color:#aaa;margin-left:15px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#fff;color:#111;border-radius:99px;padding:12px 18px;font-size:11px;font-weight:700;opacity:0;pointer-events:none;transition:.25s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:900px){.navlinks{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding-top:45px}.hero-side{margin-top:10px}.cards{grid-template-columns:repeat(2,1fr)}.feature,.clubgrid{grid-template-columns:1fr}.creators{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.wrap{width:min(100% - 24px,1240px)}.nav{height:64px}.navright .icon{display:none}.hero h1{font-size:62px}.hero-card{height:300px}.cards{grid-template-columns:1fr}.section{padding:52px 0}.clubsection{padding:25px;margin-bottom:50px;border-radius:25px}.features{grid-template-columns:1fr}.creators{grid-template-columns:1fr}.footgrid{display:block}.footer a{display:inline-block;margin:15px 12px 0 0}}
 </style>
 </head>
 <body>
-<header class="hero">
-  <div class="navwrap">
-    <nav>
-      <div class="logo">CHILL<span>ERA</span></div>
-      <div class="navlinks"><a href="#sklepy">sklepy</a><a href="#events">events</a><a href="#house">house</a></div>
-      <a class="navcta" href="#sklepy">WEJDŹ</a>
-    </nav>
-  </div>
-  <div class="wrap hero-inner">
-    <div class="eyebrow">KATOWICE / ŚLĄSK / JUST CHILLING</div>
-    <h1>LOKALNIE.<br><em>PO SWOJEMU.</em></h1>
-    <div class="hero-copy">
-      <p>Chillera to przewodnik po miejscach, ludziach, muzyce i wydarzeniach. Teraz dokładamy jedną z najważniejszych zakładek: <b>gdzie kupić legalne produkty konopne i kto jest naszym partnerem.</b></p>
-      <div class="hero-actions"><a class="btn green" href="#sklepy">ZOBACZ SKLEPY ↗</a><a class="btn dark" href="#house">CHILLERA HOUSE</a></div>
-    </div>
-    <div class="orbit"></div><div class="sticker">NO<br>ALCOHOL<br>JUST<br>VIBES</div>
-  </div>
+<div class="wrap">
+<header class="nav">
+<a class="logo" href="#">CHI<span>LLERA</span></a>
+<nav class="navlinks"><a href="#tv">TV</a><a href="#originals">ORIGINALS</a><a href="#creators">TWÓRCY</a><a href="#events">EVENTY</a></nav>
+<div class="navright"><button class="icon" onclick="toast('Wyszukiwarka Chillera — włączymy ją w kolejnym kroku')">⌕</button><a class="btn club" href="#club">CLUB 18+</a></div>
 </header>
-<div class="marquee"><span>🌿 LOCAL GUIDE</span><span>🎧 MUSIC</span><span>🥤 NO ALCOHOL</span><span>📍 KATOWICE</span><span>🤝 PARTNERZY</span><span>🌿 LOCAL GUIDE</span></div>
 
-<section>
-<div class="wrap">
-  <div class="sectionhead"><h2>NOWA<br>CHILLERA</h2><p>Nie robimy kolejnego katalogu. Robimy miejsce, do którego wchodzisz po konkret: dobry spot, dobry sklep, dobry event i ludzie, których warto znać.</p></div>
-  <div class="bento">
-    <div class="visual"><div class="circle"></div><h3>SHOP → BAR → MUSIC → COMMUNITY</h3></div>
-    <div class="mini-stack">
-      <div class="mini dark"><div class="num">01 / PARTNERZY</div><h3>Sklepy, które znamy.</h3><p>Bez przypadkowych linków. Oficjalne strony i konkretne miejsca.</p></div>
-      <div class="mini"><div class="num">02 / FORMAT</div><h3>Chillera House.</h3><p>Bezalkoholowy bar, muzyka, wydarzenia, merch i społeczność.</p></div>
-    </div>
-  </div>
+<main>
+<section class="hero">
+<div>
+<div class="kicker">KATOWICE / POLSKA / 2026</div>
+<h1>TO NIE JEST<br><span>KOLEJNA STRONA.</span></h1>
+<p>Chillera to lokalna platforma ludzi, filmów, muzyki, miejsc i wydarzeń. Oglądaj Chillera TV, poznawaj twórców i odkrywaj miasto po swojemu.</p>
+<div class="heroactions"><a class="btn primary" href="#tv">▶ OGLĄDAJ CHILLERA TV</a><a class="btn" href="#creators">ZOSTAŃ TWÓRCĄ →</a></div>
+</div>
+<div class="hero-side"><div class="hero-card"><div class="live">CHILLERA TV</div><div class="orb"></div><div class="copy"><strong>JUST CHILLING.</strong><small>filmy • ludzie • miasto • muzyka</small></div></div></div>
+</section>
+
+<section class="section" id="tv">
+<div class="sectionhead"><div><div class="kicker">CHILLERA TV</div><h2>CO OGLĄDAMY</h2></div><a class="arrow" href="#creators">WSZYSCY TWÓRCY →</a></div>
+<div class="cards">
+<article class="media" onclick="toast('Player gotowy — po podpięciu YouTube/Vimeo odpali tutaj')"><div class="visual"><div class="tag">CHILLERA HOUSE</div><div class="play">▶</div></div><div class="mediacopy"><h3>Chillera House</h3><p>Dom, ekipa, muzyka i jeden weekend bez spiny.</p></div></article>
+<article class="media" onclick="toast('Player gotowy — po podpięciu YouTube/Vimeo odpali tutaj')"><div class="visual v2"><div class="tag">SESSIONS</div><div class="play">▶</div></div><div class="mediacopy"><h3>Chillera Sessions</h3><p>Rap, freestyle, DJ-e i lokalne brzmienia.</p></div></article>
+<article class="media" onclick="toast('Player gotowy — po podpięciu YouTube/Vimeo odpali tutaj')"><div class="visual v3"><div class="tag">CITY</div><div class="play">▶</div></div><div class="mediacopy"><h3>Katowice po swojemu</h3><p>Miejsca, ludzie i historie z naszego miasta.</p></div></article>
+<article class="media" onclick="toast('Player gotowy — po podpięciu YouTube/Vimeo odpali tutaj')"><div class="visual v4"><div class="tag">FOOD</div><div class="play">▶</div></div><div class="mediacopy"><h3>Chillera Food</h3><p>Gastro bez przewodnikowego zadęcia.</p></div></article>
 </div>
 </section>
 
-<section id="sklepy">
-<div class="wrap">
-  <div class="sectionhead"><h2>SKLEPY<br>& PARTNERZY</h2><p>Na start kierujemy ludzi bezpośrednio do oficjalnych stron. W przyszłości każdy partner dostanie własną kartę na mapie Chillery.</p></div>
-  <div class="shops">
-    <article class="shop featured">
-      <div class="topline"><span class="badge">PARTNER / KATOWICE</span><span class="mark">CS</span></div>
-      <h3>Cannabis Spot</h3>
-      <p>Sklep stacjonarny przy Dyrekcyjnej 4 w Katowicach + sklep online. Tu zaczynamy rozmowę o współpracy Chillery.</p>
-      <a href="https://cannabis-spot.pl/" target="_blank" rel="noopener">OTWÓRZ CANNABIS SPOT</a>
-    </article>
-    <article class="shop">
-      <div class="topline"><span class="badge">SHOP</span><span class="mark">CN</span></div>
-      <h3>Cannova</h3>
-      <p>Sklep prowadzony przez Cannabis Spot. CBD, CBG i produkty konopne — oficjalny link w jednym miejscu.</p>
-      <a href="https://cannova.pl/" target="_blank" rel="noopener">OTWÓRZ CANNOVA</a>
-    </article>
-    <article class="shop">
-      <div class="topline"><span class="badge">DODAJEMY</span><span class="mark">+</span></div>
-      <h3>Twój sklep</h3>
-      <p>Masz lokal, który pasuje do Chillery? Napisz. Budujemy mapę miejsc, a nie zamknięty katalog.</p>
-      <a href="mailto:kontakt@chillera.pl?subject=Partner%20Chillery">ZGŁOŚ MIEJSCE</a>
-    </article>
-  </div>
-  <div class="notice"><b>Legalny produkt ≠ dowolny marketing.</b> W Chillerze będziemy linkować do oficjalnych sprzedawców i opisywać produkty zgodnie z ich faktycznym statusem. Przy produktach konopnych sprawdzamy m.in. skład, THC, etykietowanie i kategorię produktu.</div>
+<section class="section" id="originals">
+<div class="sectionhead"><div><div class="kicker">CHILLERA ORIGINALS</div><h2>WŁASNE FORMATY</h2></div><div class="sub">Filmy mogą być hostowane na YouTube albo Vimeo. Chillera buduje katalog, markę i doświadczenie.</div></div>
+<div class="feature">
+<article class="bigcard"><div class="kicker">ORIGINAL 001</div><h3>CHILLERA<br><span style="color:var(--lime)">HOUSE</span></h3><p class="sub">Pierwszy własny format: ekipa, twórcy, gotowanie, muzyka, freestyle, wyjazdy i życie poza ekranem.</p><div class="heroactions"><a class="btn primary" href="#creators">POZNAJ TWÓRCÓW →</a></div></article>
+<div class="sidecards">
+<article class="mini"><div class="num">02 / SESSIONS</div><h3>MUZYKA</h3><p>Koncerty, freestyle, DJ sety i własne sesje nagraniowe.</p></article>
+<article class="mini"><div class="num">03 / CITY</div><h3>KATOWICE</h3><p>Lokale, wydarzenia, ludzie i miejsca polecane przez lokalnych.</p></article>
+<article class="mini"><div class="num">04 / PEOPLE</div><h3>LUDZIE</h3><p>Rozmowy z osobami, które robią coś ciekawego.</p></article>
+</div>
 </div>
 </section>
 
-<section id="events">
-<div class="wrap">
-  <div class="sectionhead"><h2>EVENTY<br>BEZ SPINY</h2><p>Muzyka, freestyle, YouTube, food, bezalkoholowe drinki i lokalne marki. Pierwsze wydarzenia będą testem formatu Chillery House.</p></div>
-  <div class="eventgrid">
-    <div class="eventcard"><div class="date">KATOWICE / 001</div><h3>CHILLERA<br>HOUSE</h3><p>Muza, ekipa, freestyle i partnerzy w jednym miejscu. Pierwszy event jako pilotaż przyszłego lokalu.</p><div class="big">01</div></div>
-    <div class="eventcard lime"><div class="date">COMING SOON</div><h3>CHILL<br>CAMP</h3><p>Weekendowy format z muzyką, jedzeniem, aktywnościami i strefami partnerów.</p><div class="big">02</div></div>
-  </div>
+<section class="section" id="events">
+<div class="sectionhead"><div><div class="kicker">CHILLERA CITY</div><h2>CO SIĘ DZIEJE</h2></div><div class="sub">Docelowo: wydarzenia, koncerty, Chillera House, Chillcamp i lokalny radar.</div></div>
+<div class="cards">
+<article class="media"><div class="visual v2"><div class="tag">JUTRO</div></div><div class="mediacopy"><h3>Melanż / Katowice</h3><p>Wydarzenia będziemy podawać razem z miejscem, godziną i linkiem.</p></div></article>
+<article class="media"><div class="visual v3"><div class="tag">MUZYKA</div></div><div class="mediacopy"><h3>Chillera Sessions</h3><p>Nowe nagrania i koncerty lokalnych artystów.</p></div></article>
+<article class="media"><div class="visual"><div class="tag">CHILLERA HOUSE</div></div><div class="mediacopy"><h3>Pierwszy house</h3><p>Format do budowania społeczności i własnych produkcji.</p></div></article>
+<article class="media"><div class="visual v4"><div class="tag">COMING SOON</div></div><div class="mediacopy"><h3>Chillcamp</h3><p>Wyjazdy, twórcy, muzyka i wspólne doświadczenia.</p></div></article>
 </div>
 </section>
 
-<section id="house">
-<div class="wrap">
-  <div class="house">
-    <div><div class="eyebrow">FORMAT / 001</div><h2>CHILLERA<br><span>HOUSE</span></h2><p>Docelowo: lokal w Ligocie lub Panewnikach. Sklep partnerski + bezalkoholowy bar + mała scena + muzyka + content studio. Nie kolejny „bar z CBD”. <b>Miejsce dla ekipy.</b></p><a class="btn green" href="mailto:kontakt@chillera.pl?subject=Chillera%20House">CHCĘ BYĆ PARTNEREM ↗</a></div>
-    <div class="house-art"><div class="smoke">✦</div><div class="music">♫</div><div class="person p1">☻</div><div class="person p2">♪</div><div class="person p3">☻</div></div>
-  </div>
+<section class="clubsection" id="club">
+<div class="clubgrid">
+<div><div class="kicker" style="color:#6f871f">STREFA DLA DOROSŁYCH</div><h2>CHILLERA<br><span>CLUB 18+</span></h2><p>Płatna strefa premium z rozszerzoną wiedzą, materiałami, rozmowami z ekspertami i zamkniętą społecznością. Treści medyczne mają charakter edukacyjny; decyzje dotyczące leczenia podejmuje lekarz.</p>
+<div class="features"><div class="feat"><b>BAZA WIEDZY</b><span>uporządkowane materiały i FAQ</span></div><div class="feat"><b>CHILLERA TV PREMIUM</b><span>rozmowy i materiały specjalne</span></div><div class="feat"><b>COMMUNITY</b><span>zamknięte Q&A i dyskusje</span></div><div class="feat"><b>LEGALNA ŚCIEŻKA</b><span>informacje o konsultacji i legalnym obrocie</span></div></div></div>
+<div class="join"><div class="kicker">CLUB / WKRÓTCE</div><h3>WEJDŹ DO ŚRODKA.</h3><p style="color:#999;font-size:11px;line-height:1.6">Zapisz się na listę pierwszych członków. Na razie nie pobieramy opłaty — budujemy pierwszą wersję Clubu.</p><input class="input" id="email" type="email" placeholder="twój@email.pl"><button onclick="join()">ZAPISZ MNIE</button><div style="font-size:8px;color:#666;margin-top:10px">18+ • informacje edukacyjne • bez gwarancji recepty</div></div>
 </div>
 </section>
 
-<footer>
-<div class="wrap">
-  <div class="foot"><b>CHILLERA © 2026</b><span>Katowice / Silesia</span><a href="#sklepy">Sklepy ↑</a></div>
-  <div class="legal">Serwis ma charakter przewodnika i materiału informacyjnego. Informacje o produktach nie stanowią porady medycznej. Produkty konopne podlegają różnym kategoriom prawnym; przed publikacją ofert i akcji promocyjnych sprawdzamy aktualne wymogi. Wydarzenia i zasady uczestnictwa ustala organizator.</div>
+<section class="section" id="creators">
+<div class="sectionhead"><div><div class="kicker">CREATOR PROGRAM</div><h2>TWÓRCY</h2></div><div class="sub">Nie musisz być wielką telewizją. Masz telefon, pomysł i coś ciekawego do pokazania? Zaczynamy.</div></div>
+<div class="creators">
+<div class="creator"><div class="avatar">M</div><div><b>Mati</b><span>host / Chillery</span></div></div>
+<div class="creator"><div class="avatar">?</div><div><b>Twoje miejsce</b><span>zostań pierwszym twórcą</span></div></div>
+<div class="creator"><div class="avatar">+</div><div><b>Dołącz</b><span>wyślij nam swój format</span></div></div>
 </div>
-</footer>
-</body>
-</html>
+<div style="margin-top:15px"><a class="btn primary" href="mailto:chillera.tv@gmail.com?subject=Chillera%20Creator">ZOSTAŃ TWÓRCĄ →</a></div>
+</section>
+</main>
+
+<footer class="footer"><div class="footgrid"><div><div class="footlogo">CHI<span>LLERA</span></div><div style="margin-top:8px">Katowice / Polska</div></div><div><a href="#tv">TV</a><a href="#originals">Originals</a><a href="#creators">Twórcy</a><a href="#club">Club 18+</a></div></div><p style="margin-top:30px;max-width:700px;line-height:1.6">Chillera jest platformą lifestyle i medialną. Informacje dotyczące zdrowia, leków i terapii są publikowane w celach edukacyjnych i nie zastępują konsultacji z lekarzem.</p></footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+function toast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>x.classList.remove('show'),2600)}
+function join(){const e=document.getElementById('email').value.trim();if(!e||!e.includes('@'))return toast('Wpisz poprawny e-mail');localStorage.setItem('chilleraClubEmail',e);toast('Jesteś na liście. Club 18+ damy znać jako pierwszy.')}
+</script>
+</body></html>
