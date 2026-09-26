@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0b0a">
+<title>Chillera — Lekarze i apteki | medyczna marihuana</title>
+<meta name="description" content="Katalog lekarzy, klinik i aptek realizujących recepty na medyczną marihuanę. Wyszukiwarka, lokalizacja i pomoc w rejestracji.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#0b0b0a;--card:#151513;--line:#292925;--paper:#f3f1ea;--ink:#11110f;--lime:#c8f24a;--muted:#9d9b93;--green:#7fd36b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff;font-family:'DM Sans',system-ui,sans-serif}button,input,select{font:inherit}a{color:inherit;text-decoration:none}.wrap{width:min(1280px,calc(100% - 32px));margin:auto}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font:700 30px 'Space Grotesk';letter-spacing:-.08em}.logo span{color:var(--lime)}.back{font-size:11px;color:#aaa;border:1px solid var(--line);padding:10px 14px;border-radius:99px}
+.hero{padding:70px 0 38px}.kicker{font-size:10px;letter-spacing:.18em;color:var(--lime);font-weight:700;text-transform:uppercase}.hero h1{font:700 clamp(54px,8vw,104px)/.83 'Space Grotesk';letter-spacing:-.08em;margin:15px 0 22px;max-width:950px}.hero h1 span{color:var(--lime)}.hero p{max-width:720px;color:#aaa89f;line-height:1.65;font-size:14px}
+.searchbox{margin:30px 0 14px;background:#141412;border:1px solid #363630;border-radius:24px;padding:13px;display:grid;grid-template-columns:1.8fr .7fr .7fr auto;gap:9px}.searchbox input,.searchbox select{background:#0d0d0c;color:#fff;border:1px solid #302f2b;border-radius:14px;padding:14px;outline:0}.searchbox input:focus,.searchbox select:focus{border-color:var(--lime)}.loc{border:0;background:var(--lime);color:#111;font-weight:800;border-radius:14px;padding:0 18px;cursor:pointer}.loc.loading{opacity:.6}
+.notice{font-size:10px;color:#777;line-height:1.5}.notice b{color:#aaa}
+.tabs{display:flex;gap:7px;margin:35px 0 20px}.tab{border:1px solid var(--line);background:#151513;color:#aaa;border-radius:99px;padding:11px 16px;font-size:11px;font-weight:700;cursor:pointer}.tab.active{background:var(--lime);border-color:var(--lime);color:#111}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;color:#777;font-size:10px}.meta strong{color:#fff}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:23px;padding:20px;min-height:270px;display:flex;flex-direction:column}.card:hover{border-color:#48483f}.topline{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.badge{font-size:8px;letter-spacing:.08em;padding:6px 8px;border-radius:99px;background:#24241f;color:var(--lime);font-weight:800}.distance{font-size:9px;color:#777;white-space:nowrap}.card h2{font:700 24px/1 'Space Grotesk';letter-spacing:-.055em;margin:17px 0 7px}.special{font-size:10px;color:#aaa}.address{font-size:10px;color:#777;line-height:1.5;margin:13px 0}.details{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}.pill{border:1px solid #33332e;border-radius:99px;padding:6px 8px;font-size:8px;color:#aaa}.actions{display:flex;gap:7px;margin-top:14px}.btn{flex:1;text-align:center;border:1px solid #393934;padding:10px;border-radius:99px;font-size:9px;font-weight:800}.btn.primary{background:var(--lime);border-color:var(--lime);color:#111}.source{font-size:8px;color:#5f5e58;margin-top:10px}.source a{text-decoration:underline;color:#777}.verified{color:var(--green);font-weight:700}
+.empty{border:1px dashed #3b3b35;border-radius:20px;padding:35px;color:#777;grid-column:1/-1;text-align:center}.footer{margin-top:70px;padding:45px 0;border-top:1px solid var(--line);color:#686760;font-size:9px;line-height:1.7}.assistant{position:fixed;right:18px;bottom:18px;z-index:30;width:min(390px,calc(100vw - 36px));background:#f5f3ed;color:#111;border-radius:25px;box-shadow:0 20px 80px #000;display:none;overflow:hidden}.assistant.open{display:block}.ahead{background:#111;color:#fff;padding:15px 17px;display:flex;justify-content:space-between}.ahead b{font:700 20px 'Space Grotesk'}.ahead span{color:var(--lime)}.close{border:0;background:transparent;color:#fff;font-size:18px;cursor:pointer}.amsg{padding:16px;max-height:290px;overflow:auto;display:flex;flex-direction:column;gap:8px}.bubble{padding:10px 12px;border-radius:14px;background:#e8e5dc;font-size:10px;line-height:1.45;max-width:88%}.bubble.me{align-self:flex-end;background:#111;color:#fff}.arow{display:flex;padding:10px;border-top:1px solid #ddd7ca;gap:7px}.arow input{flex:1;border:1px solid #d0cabc;border-radius:99px;padding:10px 12px;font-size:10px}.arow button{border:0;background:var(--lime);border-radius:99px;font-weight:800;padding:0 15px}.fab{position:fixed;right:18px;bottom:18px;background:var(--lime);color:#111;border:0;border-radius:99px;padding:14px 17px;font-weight:900;z-index:25;box-shadow:0 8px 35px #0008;cursor:pointer}.assistant.open~.fab{display:none}
+@media(max-width:850px){.searchbox{grid-template-columns:1fr 1fr}.loc{padding:13px}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.wrap{width:min(100% - 22px,1280px)}.hero{padding-top:48px}.searchbox{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.nav{height:64px}.hero h1{font-size:57px}.tabs{overflow:auto}.tab{white-space:nowrap}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="nav"><a class="logo" href="index.html">CHI<span>LLERA</span></a><a class="back" href="index.html">← WRÓĆ DO CHILLERY</a></header>
+<main>
+<section class="hero">
+<div class="kicker">CHILLERA HEALTH / POLSKA</div>
+<h1>LEKARZ.<br><span>APTEKA.</span><br>OGARNIĘTE.</h1>
+<p>Jedno miejsce do wyszukania kliniki lub lekarza, sprawdzenia lokalizacji i przejścia do rejestracji. Katalog opiera się na publicznych stronach placówek i profilach lekarzy; każdy wpis ma wskazane źródło i datę weryfikacji.</p>
+<div class="searchbox">
+<input id="q" placeholder="Szukaj lekarza, kliniki, miasta...">
+<select id="city"><option value="">Wszystkie miasta</option></select>
+<select id="sort"><option value="relevance">Sortuj: dopasowanie</option><option value="distance">Odległość</option><option value="city">Miasto A–Z</option></select>
+<button class="loc" id="loc">📍 NAJBLIŻEJ MNIE</button>
+</div>
+<div class="notice"><b>Ważne:</b> katalog nie gwarantuje kwalifikacji do terapii ani wystawienia recepty. O tym decyduje lekarz po ocenie pacjenta. Dostępność leku w aptece może zmienić się w każdej chwili.</div>
+</section>
+
+<div class="tabs"><button class="tab active" data-tab="doctors">👨‍⚕️ LEKARZE I KLINIKI</button><button class="tab" data-tab="pharmacies">🌿 APTEKI</button></div>
+<div class="meta"><span id="count"></span><span>Ostatnia aktualizacja danych: <strong>26.09.2026</strong></span></div>
+<section id="grid" class="grid"></section>
+</main>
+<footer class="footer">Chillera / informacyjny katalog usług medycznych. Dane są zbierane z publicznie dostępnych stron placówek i katalogów. Przed wizytą sprawdź aktualność adresu, ceny, dostępność terminów i możliwość realizacji recepty. Katalog nie jest świadczeniem medycznym ani systemem wystawiania recept.</footer>
+</div>
+
+<button class="fab" id="fab">🤖 MATI — UMÓW WIZYTĘ</button>
+<div class="assistant" id="assistant">
+<div class="ahead"><b>MATI <span>OGARNIA.</span></b><button class="close" id="close">×</button></div>
+<div class="amsg" id="amsg"><div class="bubble">Siema 👋 Powiedz mi miasto albo dzielnicę i czego szukasz. Pomogę znaleźć placówkę i przejść do rejestracji.</div></div>
+<div class="arow"><input id="ain" placeholder="np. Katowice, jutro..."><button id="send">→</button></div>
+</div>
+
+<script>
+const doctors=[
+{name:'MedCan Clinics — Katowice',city:'Katowice',address:'ul. Józefowska 76, 40-881 Katowice',type:'klinika',tags:['konsultacja stacjonarna','kontynuacja'],price:'od 249 zł',url:'https://medcanclinics.pl/klinika-konopna-katowice/',source:'MedCan Clinics',verified:'07.09.2026'},
+{name:'Klinika Babci Marysi',city:'Katowice',address:'Katowice — konsultacje stacjonarne',type:'klinika',tags:['konsultacje stacjonarne','kwalifikacja'],price:'135 zł kontynuacja',url:'https://cmbm.pl/',source:'Klinika Babci Marysi',verified:'26.09.2026'},
+{name:'Klinika konopna / Recepta Marihuana',city:'Katowice',address:'Mariacka 37, 40-224 Katowice',type:'klinika',tags:['wizyta stacjonarna'],price:'99 zł',url:'https://receptamarihuana.pl/medyczna-marihuana-katowice/',source:'Recepta Marihuana',verified:'26.09.2026'},
+{name:'Aspot Clinics — Katowice',city:'Katowice',address:'Katowice — adres potwierdzany przy rejestracji',type:'klinika',tags:['wizyta stacjonarna'],price:'sprawdź przy rejestracji',url:'https://www.aspotclinics.pl/',source:'Aspot Clinics',verified:'26.09.2026'},
+{name:'Aspot Clinics — Warszawa',city:'Warszawa',address:'Aleje Jerozolimskie 59 / Westfield Mokotów',type:'klinika',tags:['wizyta stacjonarna'],price:'sprawdź przy rejestracji',url:'https://www.aspotclinics.pl/',source:'Aspot Clinics',verified:'26.09.2026'},
+{name:'Aspot Clinics — Kraków',city:'Kraków',address:'ul. Pawia 12 / ul. Starowiślna 88',type:'klinika',tags:['wizyta stacjonarna'],price:'sprawdź przy rejestracji',url:'https://www.aspotclinics.pl/',source:'Aspot Clinics',verified:'26.09.2026'},
+{name:'Aspot Clinics — Wrocław',city:'Wrocław',address:'Wrocław — rejestracja telefoniczna',type:'klinika',tags:['wizyta stacjonarna'],price:'sprawdź przy rejestracji',url:'https://www.aspotclinics.pl/',source:'Aspot Clinics',verified:'26.09.2026'},
+{name:'Aspot Clinics — Poznań',city:'Poznań',address:'Poznań — rejestracja telefoniczna',type:'klinika',tags:['wizyta stacjonarna'],price:'sprawdź przy rejestracji',url:'https://www.aspotclinics.pl/',source:'Aspot Clinics',verified:'26.09.2026'},
+{name:'Aspot Clinics — Gdańsk',city:'Gdańsk',address:'Gdańsk — rejestracja telefoniczna',type:'klinika',tags:['wizyta stacjonarna'],price:'sprawdź przy rejestracji',url:'https://www.aspotclinics.pl/',source:'Aspot Clinics',verified:'26.09.2026'},
+{name:'Medweed — Warszawa Ursynów',city:'Warszawa',address:'Beli Bartóka 8, Warszawa',type:'klinika',tags:['pierwsza wizyta','kontynuacja'],price:'199 zł pierwsza',url:'https://medweed.pl/',source:'Medweed',verified:'26.09.2026'},
+{name:'Medweed — Poznań',city:'Poznań',address:'Grochowska 116, Poznań',type:'klinika',tags:['pierwsza wizyta','kontynuacja'],price:'199 zł pierwsza',url:'https://medweed.pl/',source:'Medweed',verified:'26.09.2026'},
+{name:'Medweed — Olsztyn',city:'Olsztyn',address:'Dąbrowszczaków 28, Olsztyn',type:'klinika',tags:['pierwsza wizyta','kontynuacja'],price:'199 zł pierwsza',url:'https://medweed.pl/',source:'Medweed',verified:'26.09.2026'},
+{name:'Medweed — Opole',city:'Opole',address:'Ozimska 25, piętro 3, gabinet 3',type:'klinika',tags:['pierwsza wizyta','kontynuacja'],price:'199 zł pierwsza',url:'https://medweed.pl/',source:'Medweed',verified:'26.09.2026'},
+{name:'CannabisMedic — Kraków',city:'Kraków',address:'ul. Gęsia 22A, Kraków',type:'klinika',tags:['konsultacja stacjonarna'],price:'169,99 zł',url:'https://cannabismedic.pl/',source:'CannabisMedic',verified:'26.09.2026'},
+{name:'CannabisMedic — Bydgoszcz',city:'Bydgoszcz',address:'ul. Dworcowa 13/U11, Bydgoszcz',type:'klinika',tags:['konsultacja stacjonarna'],price:'169,99 zł',url:'https://cannabismedic.pl/',source:'CannabisMedic',verified:'26.09.2026'},
+{name:'CannabisMedic — Toruń',city:'Toruń',address:'ul. Rynek Staromiejski 36/38, Toruń',type:'klinika',tags:['konsultacja stacjonarna'],price:'169,99 zł',url:'https://cannabismedic.pl/',source:'CannabisMedic',verified:'26.09.2026'},
+{name:'CannabisMedic — Kielce',city:'Kielce',address:'ul. Bohaterów Warszawy 2A/50, Kielce',type:'klinika',tags:['konsultacja stacjonarna'],price:'169,99 zł',url:'https://cannabismedic.pl/',source:'CannabisMedic',verified:'26.09.2026'},
+{name:'Poradnia Cannabis — Instytut Zdrowia',city:'Warszawa',address:'ul. Karola Miarki 11d, Warszawa',type:'poradnia',tags:['terapia konopna','konsultacje'],price:'sprawdź rejestrację',url:'https://cannabis.izww.pl/',source:'Instytut Zdrowia w Warszawie',verified:'26.09.2026'},
+{name:'lek. Ewa Jastrzębska',city:'Warszawa',address:'Ludwika Narbutta 48/5, Warszawa',type:'lekarz',tags:['leczenie marihuaną medyczną'],price:'250 zł',url:'https://www.znanylekarz.pl/ewa-jastrzebska-2/lekarz-bez-specjalizacji/warszawa',source:'ZnanyLekarz',verified:'26.09.2026'},
+{name:'lek. Albert Jeznach',city:'Warszawa',address:'Kacza 8, Warszawa',type:'lekarz',tags:['leczenie bólu','terapia konopna'],price:'450 zł',url:'https://www.znanylekarz.pl/',source:'ZnanyLekarz',verified:'26.09.2026'},
+{name:'lek. Przemysław Kapała',city:'Warszawa',address:'Bobrowiecka 1, Warszawa',type:'lekarz',tags:['internista','leczenie bólu'],price:'od 350 zł',url:'https://www.znanylekarz.pl/',source:'ZnanyLekarz',verified:'26.09.2026'},
+{name:'lek. Paweł Czerniawski',city:'Warszawa',address:'Wałbrzyska 46 / Ząbkowska 14/U1',type:'lekarz',tags:['neurolog','terapia konopna'],price:'od 280 zł',url:'https://www.znanylekarz.pl/',source:'ZnanyLekarz',verified:'26.09.2026'},
+{name:'lek. Marcin Jarząbek',city:'Kraków',address:'Bora Komorowskiego 25B, Kraków',type:'lekarz',tags:['lekarz pierwszego kontaktu','terapia konopna'],price:'199 zł',url:'https://www.znanylekarz.pl/',source:'ZnanyLekarz',verified:'26.09.2026'},
+{name:'lek. Jakub Marciniak',city:'Kraków',address:'al. Ignacego Daszyńskiego 12/LU1, Kraków',type:'lekarz',tags:['ortopeda','leczenie bólu'],price:'350 zł',url:'https://www.znanylekarz.pl/',source:'ZnanyLekarz',verified:'26.09.2026'},
+{name:'lek. Elżbieta Dobrowolska',city:'Zabierzów',address:'Kątowa 2, Zabierzów',type:'lekarz',tags:['anestezjolog','leczenie bólu'],price:'300 zł',url:'https://www.znanylekarz.pl/',source:'ZnanyLekarz',verified:'26.09.2026'},
+{name:'lek. Agnieszka Grot-Wereda',city:'Kraków',address:'Szuwarowa 1/u12, Kraków',type:'lekarz',tags:['internista','leczenie bólu'],price:'150 zł',url:'https://www.znanylekarz.pl/',source:'ZnanyLekarz',verified:'26.09.2026'}
+];
+
+const pharmacies=[
+{name:'Premium-Lek',city:'Katowice',address:'ul. Misjonarzy Oblatów 8, Katowice',type:'apteka',tags:['susze Cannabis flos'],price:'sprawdź stan',url:'https://www.gdziepolek.pl/',source:'MedCan / GdziePoLek',verified:'07.09.2026'},
+{name:'Apteka Główna Centrum Niskich Cen',city:'Katowice',address:'pl. Marii i Lecha Kaczyńskich 5, Katowice',type:'apteka',tags:['susze Cannabis flos'],price:'sprawdź stan',url:'https://www.gdziepolek.pl/',source:'MedCan / GdziePoLek',verified:'07.09.2026'},
+{name:'Gemini',city:'Katowice',address:'ul. Zawiszy Czarnego 7A, Katowice',type:'apteka',tags:['susze Cannabis flos'],price:'sprawdź stan',url:'https://www.gdziepolek.pl/',source:'MedCan / GdziePoLek',verified:'07.09.2026'}
+];
+
+let tab='doctors', user=null;
+const cityEl=document.getElementById('city');
+[...new Set(doctors.map(x=>x.city))].sort((a,b)=>a.localeCompare(b,'pl')).forEach(c=>cityEl.insertAdjacentHTML('beforeend',`<option>${c}</option>`));
+
+function safe(s){return String(s).replace(/[<>&"]/g,m=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[m]))}
+function render(){
+ const source=tab==='doctors'?doctors:pharmacies, q=document.getElementById('q').value.trim().toLowerCase(), city=cityEl.value, sort=document.getElementById('sort').value;
+ let arr=source.filter(x=>(!city||x.city===city)&&(!q||[x.name,x.city,x.address,x.type,...x.tags].join(' ').toLowerCase().includes(q)));
+ if(sort==='city') arr.sort((a,b)=>a.city.localeCompare(b.city,'pl'));
+ if(sort==='distance'&&user) arr.sort((a,b)=>distanceTo(a)-distanceTo(b));
+ document.getElementById('count').innerHTML=`<strong>${arr.length}</strong> ${tab==='doctors'?'wpisów lekarzy i klinik':'aptek'} w bazie`;
+ const grid=document.getElementById('grid');
+ if(!arr.length){grid.innerHTML='<div class="empty">Nie znaleziono wpisu. Spróbuj innego miasta albo frazy.</div>';return}
+ grid.innerHTML=arr.map(x=>`<article class="card"><div class="topline"><span class="badge">${safe(x.type.toUpperCase())}</span><span class="distance">${user?formatDistance(distanceTo(x)):'—'}</span></div><h2>${safe(x.name)}</h2><div class="special">${safe(x.city)} · <span class="verified">✓ źródło zweryfikowane</span></div><div class="address">📍 ${safe(x.address)}</div><div class="details">${x.tags.map(t=>`<span class="pill">${safe(t)}</span>`).join('')}<span class="pill">💰 ${safe(x.price)}</span></div><div class="actions"><a class="btn primary" href="${x.url}" target="_blank" rel="noopener">REJESTRACJA / STRONA →</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.address)}" target="_blank" rel="noopener">MAPA</a></div><div class="source">Źródło: <a href="${x.url}" target="_blank" rel="noopener">${safe(x.source)}</a> · weryfikacja ${safe(x.verified)}</div></article>`).join('');
+}
+function distanceTo(x){
+ const coords={Katowice:[50.2649,19.0238],Warszawa:[52.2297,21.0122],Kraków:[50.0647,19.9450],Wrocław:[51.1079,17.0385],Poznań:[52.4064,16.9252],Gdańsk:[54.3520,18.6466],Olsztyn:[53.7784,20.4801],Opole:[50.6751,17.9213],Bydgoszcz:[53.1235,18.0084],Toruń:[53.0138,18.5984],Kielce:[50.8661,20.6286],Zabierzów:[50.1140,19.7970]};
+ const c=coords[x.city]||coords.Katowice; if(!user)return 0;
+ const R=6371, p=Math.PI/180, dlat=(c[0]-user[0])*p, dlon=(c[1]-user[1])*p;
+ const a=Math.sin(dlat/2)**2+Math.cos(user[0]*p)*Math.cos(c[0]*p)*Math.sin(dlon/2)**2;
+ return 2*R*Math.asin(Math.sqrt(a));
+}
+function formatDistance(n){return n<1?n.toFixed(1)+' km':Math.round(n)+' km'}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');tab=b.dataset.tab;render()});
+['q','city','sort'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+document.getElementById('loc').onclick=()=>{
+ const b=document.getElementById('loc'); if(!navigator.geolocation)return alert('Twoja przeglądarka nie udostępnia lokalizacji.');
+ b.classList.add('loading');b.textContent='📍 SZUKAM...';
+ navigator.geolocation.getCurrentPosition(p=>{user=[p.coords.latitude,p.coords.longitude];document.getElementById('sort').value='distance';b.textContent='✓ NAJBLIŻEJ MNIE';render()},()=>{b.classList.remove('loading');b.textContent='📍 NAJBLIŻEJ MNIE';alert('Nie udało się pobrać lokalizacji. Możesz nadal wyszukiwać po mieście.')},{enableHighAccuracy:false,timeout:8000});
+};
+const assistant=document.getElementById('assistant'), msgs=document.getElementById('amsg');
+document.getElementById('fab').onclick=()=>assistant.classList.add('open');document.getElementById('close').onclick=()=>assistant.classList.remove('open');
+function reply(q){q=q.toLowerCase();let city='';for(const c of [...new Set(doctors.map(x=>x.city))])if(q.includes(c.toLowerCase()))city=c;
+ if(q.includes('katow')||q.includes('ligot')||q.includes('panewn'))return 'W Katowicach mam teraz kilka zweryfikowanych wpisów. Mogę od razu pokazać je na liście; wybierz placówkę i przejdź do jej rejestracji. Jeśli podasz dzielnicę, zawężę wyszukiwanie.';
+ if(q.includes('apte'))return 'Przełącz zakładkę APTEKI. Dostępność suszu zmienia się na bieżąco, dlatego przy każdym wpisie pokazujemy źródło i datę odczytu.';
+ if(city)return `Dla ${city} mam wpisy w katalogu. Wyszukiwarka jest już ustawiona pod miasto — możesz przejść do strony placówki i rejestracji.`;
+ return 'Podaj miasto, np. Katowice, Warszawa albo Kraków. Pomogę zawęzić listę. Nie umawiam wizyty ani nie oceniam kwalifikacji medycznej za lekarza.';
+}
+function send(){const i=document.getElementById('ain'),q=i.value.trim();if(!q)return;msgs.insertAdjacentHTML('beforeend',`<div class="bubble me">${safe(q)}</div><div class="bubble">${safe(reply(q))}</div>`);i.value='';msgs.scrollTop=msgs.scrollHeight}
+document.getElementById('send').onclick=send;document.getElementById('ain').addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+render();
+</script>
+</body>
+</html>
