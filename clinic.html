@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0c0a">
+<title>Chillera Clinic — znajdź wizytę</title>
+<meta name="description" content="Chillera Clinic — wyszukiwarka dostępnych wizyt w klinikach.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#0b0c0a;--card:#151713;--card2:#1b1e18;--ink:#f5f3ec;--muted:#92968b;--lime:#caff45;--line:#292d25;--orange:#ff8d55}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1240px,calc(100% - 28px));margin:auto}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font:700 31px/1 'Space Grotesk';letter-spacing:-.08em}.logo span{color:var(--lime)}nav{display:flex;gap:5px}nav a{font-size:11px;color:#aaa;padding:10px 12px;border-radius:99px}nav a:hover{background:var(--card);color:#fff}.pill{padding:10px 14px;border-radius:99px;font-size:11px;border:1px solid var(--line)}.lime{background:var(--lime);color:#10120c;border-color:var(--lime);font-weight:800}
+.hero{padding:55px 0 35px;display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.heroCopy{padding:38px;border:1px solid var(--line);border-radius:32px;background:radial-gradient(circle at 85% 10%,#caff4520,transparent 30%),linear-gradient(145deg,#151912,#0e100d);min-height:430px;display:flex;flex-direction:column;justify-content:end}.eyebrow{font-size:10px;letter-spacing:.2em;color:var(--lime);font-weight:800;text-transform:uppercase}.hero h1{font:700 clamp(58px,8vw,104px)/.8 'Space Grotesk';letter-spacing:-.09em;margin:16px 0 22px}.hero h1 span{color:var(--lime)}.lead{color:#9da095;max-width:580px;line-height:1.55;font-size:14px}.visual{border:1px solid var(--line);border-radius:32px;min-height:430px;background:radial-gradient(circle at 60% 25%,#d9ff7040,transparent 18%),linear-gradient(145deg,#20291a,#0f120d);position:relative;overflow:hidden}.visual:before{content:'CLINIC';position:absolute;right:-30px;top:30px;font:700 130px/.8 'Space Grotesk';letter-spacing:-.1em;opacity:.035}.orb{position:absolute;width:270px;height:270px;border-radius:50%;background:var(--lime);right:-40px;bottom:-60px;opacity:.75;box-shadow:0 0 100px #caff4530}.vlabel{position:absolute;left:28px;bottom:28px}.vlabel b{font:700 43px/.85 'Space Grotesk';letter-spacing:-.07em}.vlabel span{display:block;color:#8d9285;font-size:10px;margin-top:9px}
+.search{border:1px solid var(--line);background:#11130f;border-radius:28px;padding:16px;display:grid;grid-template-columns:1.2fr .8fr .8fr auto;gap:8px}.field{background:var(--card);border:1px solid #252920;border-radius:17px;padding:12px 14px}.field label{display:block;color:#73786d;font-size:8px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:5px}.field input,.field select{width:100%;background:none;border:0;outline:0;color:var(--ink);font:500 12px 'DM Sans'}.search button{border:0;border-radius:17px;background:var(--lime);font-weight:900;padding:0 22px;cursor:pointer}
+.section{padding:54px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}.head h2{font:700 53px/.85 'Space Grotesk';letter-spacing:-.08em;margin:8px 0}.sub{font-size:11px;color:#7f8479;max-width:390px;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.clinic{background:var(--card);border:1px solid var(--line);border-radius:25px;overflow:hidden}.photo{height:145px;background:linear-gradient(135deg,#242b1c,#11130f);position:relative}.photo:after{content:'';position:absolute;width:160px;height:160px;border-radius:50%;background:#caff4525;right:-30px;top:-60px}.badge{position:absolute;z-index:2;left:13px;top:13px;background:#0b0c0add;border:1px solid #ffffff18;border-radius:99px;padding:6px 8px;font-size:8px;font-weight:800}.body{padding:16px}.body h3{font:600 22px 'Space Grotesk';letter-spacing:-.05em;margin:0}.meta{color:#7e8378;font-size:10px;margin:6px 0 14px}.slots{display:flex;gap:5px;flex-wrap:wrap}.slot{border:1px solid #363c30;background:#1a1d17;padding:8px 9px;border-radius:11px;font-size:9px}.slot.hot{background:var(--lime);color:#10120c;border-color:var(--lime);font-weight:900}.bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.price{font-size:10px;color:#a9ada3}.book{padding:9px 12px;border-radius:99px;background:#f4f2ea;color:#111;font-size:9px;font-weight:900}
+.club{display:grid;grid-template-columns:1fr 1fr;gap:10px}.clubCard{border:1px solid var(--line);border-radius:28px;padding:28px;background:linear-gradient(145deg,#191d15,#10120e)}.clubCard h3{font:700 48px/.82 'Space Grotesk';letter-spacing:-.08em;margin:10px 0 17px}.clubCard h3 span{color:var(--lime)}.clubCard p{color:#878c80;font-size:11px;line-height:1.6;max-width:500px}.benefits{display:grid;grid-template-columns:1fr 1fr;gap:8px}.benefit{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:18px}.benefit b{display:block;color:var(--lime);font-size:10px}.benefit span{display:block;color:#858a7e;font-size:10px;line-height:1.45;margin-top:7px}
+footer{padding:45px 0 70px;border-top:1px solid var(--line);color:#666;font-size:10px}.foot{display:flex;justify-content:space-between}.foot a{margin-left:15px;color:#aaa}
+@media(max-width:850px){nav{display:none}.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.search{grid-template-columns:1fr 1fr}.search button{padding:14px}.club{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{width:calc(100% - 20px)}.grid{grid-template-columns:1fr}.search{grid-template-columns:1fr}.heroCopy{padding:28px}.hero h1{font-size:62px}.head{display:block}.head h2{font-size:45px}.foot{display:block}.foot nav{display:block;margin-top:18px}.foot a{margin:0 15px 0 0}}
+</style>
+</head>
+<body><div class="wrap">
+<header><a class="logo" href="index.html">CHI<span>LLERA</span></a><nav><a href="index.html">CHILLERA</a><a href="#clinics">KLINIKI</a><a href="#club">CLUB</a></nav><div style="display:flex;gap:7px"><a class="pill" href="#clinics">ZALOGUJ</a><a class="pill lime" href="#club">CHILLERA CLUB</a></div></header>
+<main>
+<section class="hero"><div class="heroCopy"><div class="eyebrow">CHILLERA CLINIC / KATOWICE</div><h1>ZNAJDŹ<br><span>WIZYTĘ.</span></h1><p class="lead">Jedno miejsce do wyszukiwania dostępnych terminów w klinikach. Szukaj po lokalizacji, czasie i cenie — kliniki prowadzą własne kalendarze.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="pill lime" href="#clinics">NAJBLIŻSZY TERMIN ↓</a><a class="pill" href="#club">POZNAJ CLUB</a></div></div><div class="visual"><div class="orb"></div><div class="vlabel"><b>FAST.<br>LOCAL.<br>CHILL.</b><span>booking dla klinik • nie obietnica recepty</span></div></div></section>
+
+<section style="padding-bottom:45px"><div class="search"><div class="field"><label>Lokalizacja</label><input id="location" placeholder="np. Katowice"></div><div class="field"><label>Kiedy</label><select id="when"><option>Jak najszybciej</option><option>Dzisiaj</option><option>Jutro</option></select></div><div class="field"><label>Sortuj</label><select id="sort"><option>Najszybciej</option><option>Najbliżej</option><option>Najtaniej</option></select></div><button onclick="filterClinics()">SZUKAJ →</button></div></section>
+
+<section class="section" id="clinics"><div class="head"><div><div class="eyebrow">DOSTĘPNE TERAZ</div><h2>WIZYTY W POBLIŻU.</h2></div><div class="sub">Demo danych. Docelowo terminy będą pobierane na żywo z kalendarzy klinik podpiętych do platformy.</div></div>
+<div class="grid" id="clinicGrid">
+<article class="clinic" data-city="Katowice" data-distance="1.2" data-price="199" data-time="16:20"><div class="photo"><span class="badge">NAJBLIŻEJ / 1,2 KM</span></div><div class="body"><h3>Klinika Chillery Katowice</h3><div class="meta">Katowice • Śródmieście • konsultacja lekarska</div><div class="slots"><span class="slot hot">DZIŚ 16:20</span><span class="slot">17:40</span><span class="slot">19:00</span></div><div class="bottom"><span class="price">od 199 zł</span><a class="book" href="#">REZERWUJ</a></div></div></article>
+<article class="clinic" data-city="Katowice" data-distance="2.4" data-price="179" data-time="17:00"><div class="photo"><span class="badge">NAJTANIEJ</span></div><div class="body"><h3>Clinic Green</h3><div class="meta">Katowice • Ligota • konsultacja lekarska</div><div class="slots"><span class="slot hot">DZIŚ 17:00</span><span class="slot">18:30</span><span class="slot">JUTRO 09:20</span></div><div class="bottom"><span class="price">od 179 zł</span><a class="book" href="#">REZERWUJ</a></div></div></article>
+<article class="clinic" data-city="Katowice" data-distance="3.8" data-price="219" data-time="15:40"><div class="photo"><span class="badge">NAJSZYBCIEJ</span></div><div class="body"><h3>Med Clinic Kato</h3><div class="meta">Katowice • Załęże • konsultacja lekarska</div><div class="slots"><span class="slot hot">DZIŚ 15:40</span><span class="slot">16:50</span><span class="slot">18:10</span></div><div class="bottom"><span class="price">od 219 zł</span><a class="book" href="#">REZERWUJ</a></div></div></article>
+</div></section>
+
+<section class="section" id="club"><div class="club"><div class="clubCard"><div class="eyebrow">CHILLERA CLUB</div><h3>TWÓJ SKRÓT<br>DO <span>TERMINU.</span></h3><p>Subskrypcja klubowa może dawać dostęp do klubowych ofert i funkcji wyszukiwania. Ostateczny zakres świadczeń ustalimy przed uruchomieniem płatności.</p><a class="pill lime" href="#">DOŁĄCZ DO CLUB →</a></div><div class="benefits"><div class="benefit"><b>01 / FAST</b><span>Szybkie wyszukiwanie najbliższych dostępnych terminów.</span></div><div class="benefit"><b>02 / LOCAL</b><span>Sortowanie po odległości od wybranej lokalizacji.</span></div><div class="benefit"><b>03 / CALENDAR</b><span>Kliniki prowadzą własną dostępność i zarządzają rezerwacjami.</span></div><div class="benefit"><b>04 / REMINDERS</b><span>Docelowo przypomnienia o rezerwacji i zmianach terminu.</span></div></div></div></section>
+</main>
+<footer><div class="foot"><div>CHILLERA CLINIC / 2026</div><div><a href="index.html">Chillera</a><a href="medycyna.html">Medycyna</a><a href="#club">Club</a></div></div></footer>
+</div>
+<script>
+function filterClinics(){
+ const city=(document.getElementById('location').value||'').toLowerCase();
+ const mode=document.getElementById('sort').value;
+ const cards=[...document.querySelectorAll('.clinic')];
+ cards.forEach(c=>c.style.display=(!city||c.dataset.city.toLowerCase().includes(city))?'block':'none');
+ const visible=cards.filter(c=>c.style.display!=='none');
+ visible.sort((a,b)=>{
+   if(mode==='Najbliżej') return +a.dataset.distance-+b.dataset.distance;
+   if(mode==='Najtaniej') return +a.dataset.price-+b.dataset.price;
+   return a.dataset.time.localeCompare(b.dataset.time);
+ });
+ visible.forEach(c=>document.getElementById('clinicGrid').appendChild(c));
+ document.getElementById('clinics').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body></html>
