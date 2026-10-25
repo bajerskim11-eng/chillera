@@ -45,7 +45,7 @@
 <a class="partner-card cannabis" href="https://www.cannabisspot.pl/" target="_blank" rel="noopener"><div class="partner-copy"><small>PARTNER / CANNABIS SPOT</small><strong>CANNABIS<br><i>SPOT</i></strong><em>„Znajdź najbliższy punkt.”</em><b>POKAŻ NA MAPIE →</b></div><div class="partner-art art-cannabis" role="img" aria-label="Ilustracja Cannabis Spot"></div></a>
 </section>
 <div class="tabs"><button class="tab active" data-tab="doctors">👨‍⚕️ LEKARZE I KLINIKI</button><button class="tab" data-tab="pharmacies">🌿 APTEKI</button></div>
-<div class="meta"><span id="count"></span><span>Ostatnia aktualizacja danych: <strong>26.09.2026</strong></span></div>
+<div class="meta"><span id="count"></span><span>Ostatnia aktualizacja danych: <strong>25.10.2026</strong></span></div>
 <section id="grid" class="grid"></section>
 </main>
 <footer class="footer">Chillera / informacyjny katalog usług medycznych. Dane są zbierane z publicznie dostępnych stron placówek i katalogów. Przed wizytą sprawdź aktualność adresu, ceny, dostępność terminów i możliwość realizacji recepty. Katalog nie jest świadczeniem medycznym ani systemem wystawiania recept.</footer>
@@ -89,14 +89,26 @@ const doctors=[
 ];
 
 const pharmacies=[
-{name:'Premium-Lek',city:'Katowice',address:'ul. Misjonarzy Oblatów 8, Katowice',type:'apteka',tags:['susze Cannabis flos'],price:'sprawdź stan',url:'https://www.gdziepolek.pl/',source:'MedCan / GdziePoLek',verified:'07.09.2026'},
-{name:'Apteka Główna Centrum Niskich Cen',city:'Katowice',address:'pl. Marii i Lecha Kaczyńskich 5, Katowice',type:'apteka',tags:['susze Cannabis flos'],price:'sprawdź stan',url:'https://www.gdziepolek.pl/',source:'MedCan / GdziePoLek',verified:'07.09.2026'},
-{name:'Gemini',city:'Katowice',address:'ul. Zawiszy Czarnego 7A, Katowice',type:'apteka',tags:['susze Cannabis flos'],price:'sprawdź stan',url:'https://www.gdziepolek.pl/',source:'MedCan / GdziePoLek',verified:'07.09.2026'}
+{name:'Premium-Lek — Misjonarzy Oblatów',city:'Katowice',address:'ul. Misjonarzy Oblatów 8, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Premium-Lek Misjonarzy Oblatów 8 Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Premium-Lek — Józefowska',city:'Katowice',address:'ul. Józefowska 100, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Premium-Lek Józefowska 100 Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Apteka Główna Centrum Niskich Cen',city:'Katowice',address:'pl. Marii i Lecha Kaczyńskich 5, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Apteka Główna Centrum Niskich Cen plac Marii i Lecha Kaczyńskich 5 Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Gemini',city:'Katowice',address:'ul. Zawiszy Czarnego 7A, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Apteka Gemini Zawiszy Czarnego 7A Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Apteka św. Jana',city:'Katowice',address:'ul. św. Jana 10, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Apteka św. Jana 10 Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Apteka Główna',city:'Katowice',address:'ul. Szewska 11 lok. 9, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Apteka Główna Szewska 11 Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Medicare Apteka — Jankego',city:'Katowice',address:'ul. gen. Jankego 15D, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Medicare Apteka Jankego 15D Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Super-Pharm — 3 Maja',city:'Katowice',address:'ul. 3-go Maja 30, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Super-Pharm 3 Maja 30 Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Super-Pharm — Silesia City Center',city:'Katowice',address:'ul. Chorzowska 107, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Super-Pharm Chorzowska 107 Katowice'),source:'Kanaba / wykaz aptek',sourceUrl:'https://kanaba.pl/medyczna-marihuana/apteki/katowice/',verified:'23.10.2026'},
+{name:'Apteka Fantazja',city:'Katowice',address:'al. Roździeńskiego 200, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Apteka Fantazja Roździeńskiego 200 Katowice'),source:'Cannabase / wykaz aptek',sourceUrl:'https://cannabase.pl/miasta/katowice',verified:'23.10.2026'},
+{name:'Apteka Medicare',city:'Katowice',address:'ul. Jagiellońska 4, Katowice',type:'apteka',tags:['apteka ogólnodostępna','zadzwoń przed wizytą'],price:'stan leku niepotwierdzony',url:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Apteka Medicare Jagiellońska 4 Katowice'),source:'Cannabase / wykaz aptek',sourceUrl:'https://cannabase.pl/miasta/katowice',verified:'23.10.2026'}
 ];
 
+doctors.push(
+{name:'Curaleaf Centrum Medyczne — Katowice',city:'Katowice',address:'Life Clinic, ul. Dąbrowskiego 22, Katowice',type:'klinika',tags:['konsultacje lekarskie','terapia konopna'],price:'cennik na stronie placówki',url:'https://curaleafcentrummedyczne.pl/',source:'Curaleaf Centrum Medyczne',verified:'25.10.2026'},
+{name:'Aspot Clinics — Katowice',city:'Katowice',address:'ul. Warszawska 40, wejście od ul. Górniczej, Katowice',type:'klinika',tags:['wizyta stacjonarna','rejestracja telefoniczna'],price:'sprawdź przy rejestracji',url:'https://www.aspotclinics.pl/',source:'Aspot Clinics',verified:'25.10.2026'}
+);
 let tab='doctors', user=null;
 const cityEl=document.getElementById('city');
-[...new Set(doctors.map(x=>x.city))].sort((a,b)=>a.localeCompare(b,'pl')).forEach(c=>cityEl.insertAdjacentHTML('beforeend',`<option>${c}</option>`));
+[...new Set([...doctors,...pharmacies].map(x=>x.city))].sort((a,b)=>a.localeCompare(b,'pl')).forEach(c=>cityEl.insertAdjacentHTML('beforeend',`<option>${c}</option>`));
 
 function safe(s){return String(s).replace(/[<>&"]/g,m=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[m]))}
 function render(){
@@ -107,7 +119,7 @@ function render(){
  document.getElementById('count').innerHTML=`<strong>${arr.length}</strong> ${tab==='doctors'?'wpisów lekarzy i klinik':'aptek'} w bazie`;
  const grid=document.getElementById('grid');
  if(!arr.length){grid.innerHTML='<div class="empty">Nie znaleziono wpisu. Spróbuj innego miasta albo frazy.</div>';return}
- grid.innerHTML=arr.map(x=>`<article class="card"><div class="topline"><span class="badge">${safe(x.type.toUpperCase())}</span><span class="distance">${user?formatDistance(distanceTo(x)):'—'}</span></div><h2>${safe(x.name)}</h2><div class="special">${safe(x.city)} · <span class="verified">✓ źródło zweryfikowane</span></div><div class="address">📍 ${safe(x.address)}</div><div class="details">${x.tags.map(t=>`<span class="pill">${safe(t)}</span>`).join('')}<span class="pill">💰 ${safe(x.price)}</span></div><div class="actions"><a class="btn primary" href="${x.url}" target="_blank" rel="noopener">REJESTRACJA / STRONA →</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.address)}" target="_blank" rel="noopener">MAPA</a></div><div class="source">Źródło: <a href="${x.url}" target="_blank" rel="noopener">${safe(x.source)}</a> · weryfikacja ${safe(x.verified)}</div></article>`).join('');
+ grid.innerHTML=arr.map(x=>`<article class="card"><div class="topline"><span class="badge">${safe(x.type.toUpperCase())}</span><span class="distance">${user?formatDistance(distanceTo(x)):'—'}</span></div><h2>${safe(x.name)}</h2><div class="special">${safe(x.city)} · <span class="verified">✓ źródło zweryfikowane</span></div><div class="address">📍 ${safe(x.address)}</div><div class="details">${x.tags.map(t=>`<span class="pill">${safe(t)}</span>`).join('')}<span class="pill">💰 ${safe(x.price)}</span></div><div class="actions"><a class="btn primary" href="${x.url}" target="_blank" rel="noopener">REJESTRACJA / STRONA →</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.address)}" target="_blank" rel="noopener">MAPA</a></div><div class="source">Źródło: <a href="${x.sourceUrl||x.url}" target="_blank" rel="noopener">${safe(x.source)}</a> · weryfikacja ${safe(x.verified)}</div></article>`).join('');
 }
 function distanceTo(x){
  const coords={Katowice:[50.2649,19.0238],Warszawa:[52.2297,21.0122],Kraków:[50.0647,19.9450],Wrocław:[51.1079,17.0385],Poznań:[52.4064,16.9252],Gdańsk:[54.3520,18.6466],Olsztyn:[53.7784,20.4801],Opole:[50.6751,17.9213],Bydgoszcz:[53.1235,18.0084],Toruń:[53.0138,18.5984],Kielce:[50.8661,20.6286],Zabierzów:[50.1140,19.7970]};
@@ -126,7 +138,7 @@ document.getElementById('loc').onclick=()=>{
 };
 const assistant=document.getElementById('assistant'), msgs=document.getElementById('amsg');
 document.getElementById('fab').onclick=()=>assistant.classList.add('open');document.getElementById('close').onclick=()=>assistant.classList.remove('open');
-function reply(q){q=q.toLowerCase();let city='';for(const c of [...new Set(doctors.map(x=>x.city))])if(q.includes(c.toLowerCase()))city=c;
+function reply(q){q=q.toLowerCase();let city='';for(const c of [...new Set([...doctors,...pharmacies].map(x=>x.city))])if(q.includes(c.toLowerCase()))city=c;
  if(q.includes('katow')||q.includes('ligot')||q.includes('panewn'))return 'W Katowicach mam teraz kilka zweryfikowanych wpisów. Mogę od razu pokazać je na liście; wybierz placówkę i przejdź do jej rejestracji. Jeśli podasz dzielnicę, zawężę wyszukiwanie.';
  if(q.includes('apte'))return 'Przełącz zakładkę APTEKI. Dostępność suszu zmienia się na bieżąco, dlatego przy każdym wpisie pokazujemy źródło i datę odczytu.';
  if(city)return `Dla ${city} mam wpisy w katalogu. Wyszukiwarka jest już ustawiona pod miasto — możesz przejść do strony placówki i rejestracji.`;
