@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/karta", "destination": "/karta.html" },
+    { "source": "/karta/", "destination": "/karta.html" }
+  ]
+}
