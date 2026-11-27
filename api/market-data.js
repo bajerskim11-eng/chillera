@@ -1,5 +1,5 @@
 const BASE = process.env.SUPABASE_URL;
-const KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const KEY = process.env.SUPABASE_ANON_KEY;
 async function rows(table, query = "") {
   const r = await fetch(`${BASE}/rest/v1/${table}?${query}`, {
     headers: { apikey: KEY, Authorization: `Bearer ${KEY}` },
