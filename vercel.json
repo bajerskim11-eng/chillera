@@ -1,6 +1,11 @@
 {
   "rewrites": [
     { "source": "/karta", "destination": "/karta.html" },
-    { "source": "/karta/", "destination": "/karta.html" }
+    { "source": "/karta/", "destination": "/karta.html" },
+    { "source": "/market", "destination": "/market.html" },
+    { "source": "/market/", "destination": "/market.html" }
+  ],
+  "crons": [
+    { "path": "/api/cron/collect", "schedule": "0 5 * * *" }
   ]
 }
