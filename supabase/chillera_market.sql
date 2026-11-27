@@ -69,3 +69,9 @@ from (values
  ('Hurtownie – feedy B2B za zgodą','wholesaler','contract')
 ) as v(name,kind,access)
 on conflict(name) do nothing;
+
+drop policy if exists "public can read enabled sources" on public.market_sources;
+create policy "public can read enabled sources" on public.market_sources for select to anon,authenticated using(enabled=true);
+drop policy if exists "public can read ingestion history" on public.market_ingestion_runs;
+create policy "public can read ingestion history" on public.market_ingestion_runs for select to anon,authenticated using(true);
+grant select on public.market_sources,public.market_ingestion_runs to anon,authenticated;
